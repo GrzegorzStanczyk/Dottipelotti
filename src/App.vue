@@ -1,10 +1,20 @@
 <template>
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
+    <div class="container-top">
+      <div class="sun"></div>
+      <h1 class="logo"><a href="/">Dotti Pelotti</a></h1>
+      <a href="#/kontakt" class="contact"></a>
+      <div class="languages">
+        <a href="/" class="langPL">pl</a>
+        <a href="/" class="langEN">en</a>
+      </div>
+    </div>
     <navigation />
-    <main>
+    <section>
+      <div class="contact-container" />
       <router-view :siteContent="siteContent" />
-    </main>
+    </section>
   </div>
 </template>
 
@@ -54,7 +64,7 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  background: url(../static/images/tlo.jpg);
 }
 
 #app {
@@ -67,10 +77,13 @@ body {
   flex: 1;
   margin-top: 16px;
   padding: 8px;
-  background: powderblue;
 }
 
 .loading {
   text-align: center;
+}
+
+.logo {
+
 }
 </style>

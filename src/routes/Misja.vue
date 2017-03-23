@@ -1,5 +1,8 @@
 <template>
-  <div v-html="pageContent" class="content" />
+  <div>
+    <h2>misja</h2>
+    <div v-html="pageContent" class="content" />
+  </div>
 </template>
 
 <script>

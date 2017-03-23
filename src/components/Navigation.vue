@@ -15,7 +15,6 @@
 nav {
   display: flex;
   padding: 8px;
-  background: powderblue;
 }
 
 a {
