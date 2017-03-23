@@ -3,12 +3,23 @@
   <div v-else id="app">
     <div class="top-container">
       <h1 class="logo"><a href="/"></a><span class="sr-only">Dotti Pelotti</span></h1>
-      <div class="contact-container">        
-        <a href="#/kontakt" class="contact">kontakt</a>
+      <div class="contact-container">
       </div>
       <div class="languages-container">
-        <a href="/" class="langPL">pl</a>
-        <a href="/" class="langEN">en</a>
+        <a href="/" 
+          title="Wybierz polski jezyk" 
+          aria-label="Wybierz polski jezyk"
+          lang="pl" 
+          hreflang="Polish" 
+          class="langPL active">pl
+        </a>
+        <a href="/" 
+          title="Choose english language"
+          aria-label="Choose english language"
+          lang="en" 
+          hreflang="English" 
+          class="langEN">en
+        </a>
       </div>
     </div>
     <navigation />
@@ -92,14 +103,16 @@ body, .top-container, .languages-container > a {
   text-align: center;
 }
 
-.contact-container > .contact,
 .top-container > .languages-container > a {
   font-family: "typouprighteunormal", cursive;
 }
 
-.contact-container > .contact,
 .languages-container > a {
   text-decoration: none;
+}
+
+.languages-container > a.active {
+  color: #000000;
 }
 
 .top-container > .languages-container,
@@ -147,23 +160,6 @@ h1.logo > a {
   animation: spin 20s linear 0s infinite;
 }
 
-.top-container > .contact-container {
-  top: 0;
-  right: 92px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-transform: lowercase;  
-  background: url(../static/images/kontakt.png) no-repeat;
-  width: 174px;
-  height: 115px;
-}
-
-.contact-container > .contact {  
-  color: #726a58;
-  margin-bottom: 25px;
-}
-
 .top-container > .languages-container {
   top: 100px;
   right: 80px;
@@ -174,6 +170,7 @@ h1.logo > a {
   background: url(../static/images/jezyk-bg.png) no-repeat;
   width: 28px;
   height: 28px;
+  color: #726a58; 
 }
 
 .languages-container > a:nth-child(1) {
