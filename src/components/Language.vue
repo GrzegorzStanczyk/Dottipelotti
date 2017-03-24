@@ -17,7 +17,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 .languages-container {
   font-family: "typoupright", cursive;
 	top: 100px;
@@ -26,7 +26,7 @@
 	    font-size: 19px;
 }
 
-.languages-container > a {
+a {
 	position: absolute;
   text-decoration: none;
 	background: url(../../static/images/jezyk-bg.png) no-repeat;
@@ -35,16 +35,20 @@
   color: #c7c3bc;
 }
 
-.languages-container > a.active {
+a.active {
   color: #726a58;
 }
 
-.languages-container > a:nth-child(1) {
+a:hover {
+  color: #726a58;
+}
+
+a:nth-child(1) {
 	top: 0px;
   left: -22px;
 }
 
-.languages-container > a:nth-child(2) {
+a:nth-child(2) {
   top: -10px;
   left: 16px;
 }
