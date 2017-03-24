@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav role="navigation">
     <router-link to="/">home</router-link>
     <router-link to="/cennik">cennik</router-link>
     <router-link to="/galeria">galeria</router-link>
