@@ -3,7 +3,7 @@
   <div v-else id="app">
     <div class="top-container">
       <div class="logo" />
-      <language class="lang"/>      
+      <language />
     </div>
     <navigation />
     <section>
@@ -69,8 +69,7 @@ body {
   background: url(../static/images/tlo.jpg);
 }
 
-body, .top-container,
-.lang, .lang > a {
+body, .top-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +99,7 @@ h1 {
 
 .logo {
   background: url(../static/images/logo.png) no-repeat;
-  margin-top: 52px;
+  margin-top: 30px;
   margin-left: 30px;
   width: 135px;
   height: 159px;

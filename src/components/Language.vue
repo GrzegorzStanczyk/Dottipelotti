@@ -27,6 +27,9 @@
 }
 
 a {
+	display: flex;
+  justify-content: center;
+  align-items: center;
 	position: absolute;
   text-decoration: none;
 	background: url(../../static/images/jezyk-bg.png) no-repeat;
