@@ -23,7 +23,7 @@
 	top: 100px;
   right: 80px;
 	position: absolute;
-	    font-size: 19px;
+	font-size: 19px;
 }
 
 a {

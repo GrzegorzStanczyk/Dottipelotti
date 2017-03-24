@@ -76,10 +76,6 @@ body, .top-container,
   align-items: center;
 }
 
-.lang {
-  position: relative;
-}
-
 #app {
   display: flex;
   flex-direction: column;
