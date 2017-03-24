@@ -2,25 +2,7 @@
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
     <div class="top-container">
-      <div class="logo" />
-      <div class="contact-container">
-      </div>
-      <div class="languages-container">
-        <a href="/" 
-          title="Wybierz polski jezyk" 
-          aria-label="Wybierz polski jezyk"
-          lang="pl" 
-          hreflang="Polish" 
-          class="langPL active">pl
-        </a>
-        <a href="/" 
-          title="Choose english language"
-          aria-label="Choose english language"
-          lang="en" 
-          hreflang="English" 
-          class="langEN">en
-        </a>
-      </div>
+      <language class="lang"/>      
     </div>
     <navigation />
     <section>
@@ -32,10 +14,11 @@
 
 <script>
 import Navigation from '@/components/Navigation'
+import Language from '@/components/Language'
 
 export default {
   name: 'app',
-  components: { Navigation },
+  components: { Navigation, Language },
   data () {
     return {
       siteContent: null
@@ -85,10 +68,15 @@ body {
   background: url(../static/images/tlo.jpg);
 }
 
-body, .top-container, .languages-container > a {
+body, .top-container,
+.lang, .lang > a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lang {
+  position: relative;
 }
 
 #app {
@@ -109,22 +97,8 @@ body, .top-container, .languages-container > a {
   text-align: center;
 }
 
-h1, .top-container > .languages-container > a {
+h1 {
   font-family: "typoupright", cursive;
-}
-
-.languages-container > a {
-  text-decoration: none;
-}
-
-.languages-container > a.active {
-  color: #000000;
-}
-
-.top-container > .languages-container,
-.top-container > .contact-container,
-.top-container > .languages-container > a {
-  position: absolute;
 }
 
 .logo {
@@ -159,29 +133,4 @@ h1, .top-container > .languages-container > a {
   height: 83px;
   animation: spin 20s linear 0s infinite;
 }
-
-.top-container > .languages-container {
-  top: 100px;
-  right: 80px;
-  border: 1px solid red;
-}
-
-.languages-container > a {  
-  background: url(../static/images/jezyk-bg.png) no-repeat;
-  width: 28px;
-  height: 28px;
-  color: #726a58; 
-}
-
-.languages-container > a:nth-child(1) {
-  left: -21px;
-}
-
-.languages-container > a:nth-child(2) {
-  top: -11px;
-  left: 17px;
-}
-
-
-
 </style>
