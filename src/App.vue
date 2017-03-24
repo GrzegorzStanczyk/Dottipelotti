@@ -2,7 +2,7 @@
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
     <div class="top-container">
-      <h1 class="logo"><a href="/"></a><span class="sr-only">Dotti Pelotti</span></h1>
+      <div class="logo" />
       <div class="contact-container">
       </div>
       <div class="languages-container">
@@ -67,13 +67,19 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'typoupright';
+  src: url('../static/font/ufonts.com_typoupright_bt.eot');
+  src: url('../static/font/ufonts.com_typoupright-bt.woff')  format('woff'),
+       url('../static/font/ufonts.com_typoupright-bt.ttf')  format('truetype');
+}
 html {
   height: 100%;
 }
 
 body {
   height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(../static/images/tlo.jpg);
@@ -103,8 +109,8 @@ body, .top-container, .languages-container > a {
   text-align: center;
 }
 
-.top-container > .languages-container > a {
-  font-family: "typouprighteunormal", cursive;
+h1, .top-container > .languages-container > a {
+  font-family: "typoupright", cursive;
 }
 
 .languages-container > a {
@@ -121,18 +127,12 @@ body, .top-container, .languages-container > a {
   position: absolute;
 }
 
-h1.logo {
+.logo {
   background: url(../static/images/logo.png) no-repeat;
   margin-top: 52px;
   margin-left: 30px;
   width: 135px;
   height: 159px;
-}
-
-h1.logo > a {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 @keyframes spin {
@@ -182,16 +182,6 @@ h1.logo > a {
   left: 17px;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
 
 
 </style>
