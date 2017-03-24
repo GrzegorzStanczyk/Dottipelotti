@@ -2,6 +2,7 @@
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
     <div class="top-container">
+      <div class="logo" />
       <language class="lang"/>      
     </div>
     <navigation />
