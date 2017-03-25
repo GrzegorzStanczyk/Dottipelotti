@@ -1,25 +1,18 @@
 <template>
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
-    <div class="top-container">
-      <div class="logo" />
-      <language />
-    </div>
-    <navigation />
-    <section>
-      <div class="contact-container" />
-      <router-view :siteContent="siteContent" />
-    </section>
+    <top-container />
+    <router-view :siteContent="siteContent" />    
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
-import Language from '@/components/Language'
+import topContainer from '@/components/Header'
 
 export default {
   name: 'app',
-  components: { Navigation, Language },
+  components: { Navigation, topContainer },
   data () {
     return {
       siteContent: null
@@ -93,40 +86,8 @@ body, .top-container {
   text-align: center;
 }
 
-h1 {
+h2 {
   font-family: "typoupright", cursive;
 }
 
-.logo {
-  background: url(../static/images/logo.png) no-repeat;
-  margin-top: 30px;
-  margin-left: 30px;
-  width: 135px;
-  height: 159px;
-}
-
-@keyframes spin {
-  0% {transform: rotate(0deg);}
-  10% {transform: rotate(-12deg);}
-  60% {transform: rotate(48deg);}
-  100% {transform: rotate(0deg);}
-}
-
-.top-container {
-  position: relative;
-  background: url(../static/images/top3.png) no-repeat;
-  width: 1024px;
-  height: 255px;
-}
-
-.top-container::before {
-  content: '';
-  background: url(../static/images/sloneczko.png) no-repeat;
-  position: absolute;
-  left: 26px;
-  top: 80px;  
-  width: 85px;
-  height: 83px;
-  animation: spin 20s linear 0s infinite;
-}
 </style>

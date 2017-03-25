@@ -1,30 +1,15 @@
-<template>
-  <nav role="navigation">
-    <router-link class="window home" to="/" exact><span>home</span></router-link>
-    <router-link class="window misja" to="/misja"><span>misja</span></router-link>
-    <router-link class="window program" to="/program"><span>program</span></router-link>
-    <router-link class="window na-talerzu" to="/na-talerzu"><span>na talerzu</span></router-link>
-    <router-link class="window galeria" to="/galeria"><span>galeria</span></router-link>
-    <router-link class="window kadra" to="/kadra"><span>kadra</span></router-link>
-    <router-link class="window cennik" to="/cennik"><span>cennik</span></router-link>
-    <router-link class="contact" to="/kontakt"><span>kontakt</span></router-link>
-  </nav>
+<template>  
+    <nav role="navigation">
+      <router-link class="window home" to="/" exact><span>home</span></router-link>
+      <router-link class="window misja" to="/misja"><span>misja</span></router-link>
+      <router-link class="window program" to="/program"><span>program</span></router-link>
+      <router-link class="window na-talerzu" to="/na-talerzu"><span>na talerzu</span></router-link>
+      <router-link class="window galeria" to="/galeria"><span>galeria</span></router-link>
+      <router-link class="window kadra" to="/kadra"><span>kadra</span></router-link>
+      <router-link class="window cennik" to="/cennik"><span>cennik</span></router-link>
+      <router-link class="contact" to="/kontakt"><span>kontakt</span></router-link>
+    </nav>  
 </template>
-
-<script>
-  export default {
-    data: function () {
-      return {
-        isActive: false
-      }
-    },
-    methods: {
-      toggle: function () {
-        this.isActive = !this.isActive
-      }
-    }
-  }
-</script>
 
 <style scoped lang="scss">
 nav {
