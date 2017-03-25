@@ -5,7 +5,6 @@
     <router-view :siteContent="siteContent" />    
   </div>
 </template>
-
 <script>
 import Navigation from '@/components/Navigation'
 import topContainer from '@/components/Header'
