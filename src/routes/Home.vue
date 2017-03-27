@@ -54,6 +54,7 @@ aside {
 .blog-container {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 10px;
   width: 1024px;
   background: url(../../static/images/content3.png) no-repeat center top;
   background-size: 100% 100%;  
@@ -63,10 +64,11 @@ aside {
 .blog-container-in {
   display: flex;
   flex-direction: column;
-  width: 384px;
+  width: 450px;
 }
 
 .blog-container-in-article {
+  font-size: 15px;
   margin: 8px;
   padding: 8px;
   background: url(../../static/images/aktualnosci-bg.jpg) repeat;

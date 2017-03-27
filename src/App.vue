@@ -2,7 +2,8 @@
   <p v-if="!siteContent" class="loading">Loading...</p>
   <div v-else id="app">
     <top-container />
-    <router-view :siteContent="siteContent" />    
+    <router-view :siteContent="siteContent" />  
+    <div class="footer"></div>  
   </div>
 </template>
 <script>
@@ -50,11 +51,9 @@ export default {
        url('../static/font/ufonts.com_typoupright-bt.ttf')  format('truetype');
 }
 html {
-  height: 100%;
 }
 
 body {
-  height: 100%;
   font-family: Verdana, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,6 +86,12 @@ body, .top-container {
 
 h2 {
   font-family: "typoupright", cursive;
+}
+
+.footer {
+  background: url(../static/images/footer3.png) no-repeat center top;
+  height: 41px;
+  padding-bottom: 10px;
 }
 
 </style>
