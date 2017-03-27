@@ -25,14 +25,16 @@ export default {
     getSiteContent () {
       const requests = [
         this.$http.get('pages'),
-        this.$http.get('posts')
+        this.$http.get('posts'),
+        this.$http.get('media')
       ]
 
       Promise.all(requests)
         .then(response => {
           this.siteContent = {
             pages: response[0].body,
-            posts: response[1].body
+            posts: response[1].body,
+            media: response[2].body
           }
         })
         .catch(error => {
