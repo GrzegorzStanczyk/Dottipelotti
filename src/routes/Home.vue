@@ -52,20 +52,18 @@ aside {
 }
 
 .blog-container {
-  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   width: 1024px;
   background: url(../../static/images/content3.png) no-repeat center top;
-  background-size: 100% 100%;
+  background-size: 100% 100%;  
   
 }
+
 .blog-container-in {
   display: flex;
-  align-items: center;
   flex-direction: column;
   width: 384px;
-  height: 100%;  
 }
 
 .blog-container-in-article {
