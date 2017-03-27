@@ -26,7 +26,7 @@ export default {
       const requests = [
         this.$http.get('pages'),
         this.$http.get('posts'),
-        this.$http.get('media')
+        this.$http.get('media/?per_page=25')
       ]
 
       Promise.all(requests)
