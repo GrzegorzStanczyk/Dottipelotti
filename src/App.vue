@@ -76,12 +76,6 @@ body, .top-container {
   width: 1024px;  
 }
 
-#app > main {
-  flex: 1;
-  margin-top: 16px;
-  padding: 8px;
-}
-
 .loading {
   text-align: center;
 }

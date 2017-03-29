@@ -1,6 +1,6 @@
 <template>  
-  <section class="blog-container">
-    <aside>
+  <main class="blog-container">
+    <aside class="aside">
       <KontaktIn :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
@@ -17,7 +17,7 @@
         </div> 
       </div>
     </article>
-  </section>
+  </main>
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 
-aside {
+.aside {
   height: 100%;
   &::after {
     content: '';

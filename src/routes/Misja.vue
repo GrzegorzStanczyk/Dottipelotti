@@ -1,6 +1,6 @@
 <template>
   <section class="blog-container">
-    <aside>
+    <aside class="aside">
       <KontaktIn :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-aside::after {
+.aside::after {
   background: url(../../static/images/misja.jpg) no-repeat center top;
 }
 
