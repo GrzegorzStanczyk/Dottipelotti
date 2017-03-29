@@ -4,10 +4,12 @@
       <KontaktIn :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
-      <h2 class="title">na talerzu
-        <span class="o1"></span>
-        <span class="o2"></span>
-      </h2> 
+      <header class="center">
+        <h2 class="title">na talerzu
+          <span class="o1"></span>
+          <span class="o2"></span>
+        </h2> 
+      </header>
       <div class="border">
         <div class="blog-container-in-article">
           <div tabindex="0" v-html="pageContent" class="content" />        

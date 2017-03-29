@@ -4,11 +4,13 @@
       <KontaktIn :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
-      <h2 class="title home">Witajcie w Dotti Pelotti
-        <span class="o1"></span>
-        <span class="o2"></span>
-        <span class="o3"></span>
-      </h2>
+      <header class="center">
+        <h2 class="title home">Witajcie w Dotti Pelotti
+          <span class="o1"></span>
+          <span class="o2"></span>
+          <span class="o3"></span>
+        </h2>
+      </header>  
       <div class="border">
         <div class="blog-container-in-article">
           <img src="../../static/images/aktualnosci.jpg" alt="Aktualności">
@@ -38,6 +40,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+.center {
+  text-align: center;
+}
 
 .aside {
   height: 100%;

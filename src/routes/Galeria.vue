@@ -1,12 +1,12 @@
 <template>
   <section class="blog-container">
-    <div class="center">
+    <header class="center">
       <h2 class="title">galeria
         <span class="o1"></span>
         <span class="o2"></span>
         <span class="o3"></span>
       </h2>
-    </div>      
+    </header>      
     <div class="galery">
       <img v-for="media in pageContent" :src="media" alt="">   
     </div>       
