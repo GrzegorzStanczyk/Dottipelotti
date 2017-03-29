@@ -1,13 +1,15 @@
 <template>
   <section class="blog-container">
+    <div class="center">
       <h2 class="title">galeria
         <span class="o1"></span>
         <span class="o2"></span>
         <span class="o3"></span>
       </h2>
-      <div class="galery">
-        <img v-for="media in pageContent" :src="media" alt="">   
-      </div>       
+    </div>      
+    <div class="galery">
+      <img v-for="media in pageContent" :src="media" alt="">   
+    </div>       
   </section>
 </template>
 
@@ -40,7 +42,7 @@ export default {
 }
 
 .title {
-  background-color: #b3dc5b; 
+  background-color: #b3dc5b;   
 }
 
 img {

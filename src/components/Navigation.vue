@@ -13,15 +13,17 @@
 
 <style scoped lang="scss">
 nav {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 0 57px;
   background: url(../../static/images/menu3.png) no-repeat center bottom;
   font-family: "typoupright", cursive;
   font-size: 24px;
   height: 131px;
+  min-width: 1024px;
   color: #726a58;
+  padding: 0 40px;
 }
 
 .window {

@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @font-face {
   font-family: 'typoupright';
   src: url('../static/font/ufonts.com_typoupright_bt.eot');
@@ -73,7 +73,7 @@ body, .top-container {
   flex-direction: column;
   margin-top: 22px;
   height: 100%;
-  width: 1024px;
+  width: 1024px;  
 }
 
 #app > main {
@@ -94,6 +94,7 @@ h2 {
   background: url(../static/images/footer3.png) no-repeat center top;
   height: 41px;
   padding-bottom: 10px;
+  min-width: 1024px;   
 }
 
 </style>

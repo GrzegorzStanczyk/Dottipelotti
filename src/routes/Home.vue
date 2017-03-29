@@ -53,12 +53,32 @@ aside {
 
 .blog-container {
   display: flex;
+  position: relative;
   justify-content: space-around;
   padding-bottom: 10px;
   width: 1024px;
   background: url(../../static/images/content3.png) no-repeat center top;
   background-size: 100% 100%;  
-  
+  &::before {
+    content: '';
+    position: absolute;
+    left: -160px;
+    bottom: 0;
+    z-index: -10;
+    width: 224px;
+    height: 285px;
+    background: url(../../static/images/tlo4.png) no-repeat;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: -160px;
+    top: 0;
+    z-index: -10;
+    background: url(../../static/images/tlo5.png) no-repeat;
+    width: 234px;
+    height: 284px;
+  } 
 }
 
 .blog-container-in {
