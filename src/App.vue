@@ -5,10 +5,7 @@
     <router-view :siteContent="siteContent" />  
     <div class="footer"></div>  
   </div>
-  <div v-else>
-    <mobile :siteContent="siteContent" />
-  </div>
-  
+  <mobile v-else :siteContent="siteContent" />  
 </template>
 <script>
 import Navigation from '@/components/Navigation'
@@ -26,7 +23,13 @@ export default {
   },
   beforeMount () {
     this.getSiteContent()
-    this.mobileWidth()
+  },
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.getWindowWidth)
+
+      this.getWindowWidth()
+    })
   },
   methods: {
     getSiteContent () {
@@ -48,9 +51,12 @@ export default {
           console.error(error)
         })
     },
-    mobileWidth () {
+    getWindowWidth () {
       this.widnowWidth = window.innerWidth
     }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.getWindowWidth)
   }
 }
 </script>
