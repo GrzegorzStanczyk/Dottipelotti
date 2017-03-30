@@ -9,13 +9,13 @@
       </div>
     </header>
     <Home id="home" :siteContent="siteContent" />
-    <Misja id="mision" :siteContent="siteContent" />
+    <Misja id="misja" :siteContent="siteContent" />
     <Program id="program" :siteContent="siteContent" />
-    <NaTalerzu id="food" :siteContent="siteContent" />
-    <Galeria id="gallery" :siteContent="siteContent" />
-    <Kadra id="personnel" :siteContent="siteContent" />
-    <Cennik id="price" :siteContent="siteContent" />
-    <Kontakt id="contact" :siteContent="siteContent" />
+    <NaTalerzu id="na-talerzu" :siteContent="siteContent" />
+    <Galeria id="galeria" :siteContent="siteContent" />
+    <Kadra id="kadra" :siteContent="siteContent" />
+    <Cennik id="cennik" :siteContent="siteContent" />
+    <Kontakt id="kontakt" :siteContent="siteContent" />
   </div>  
 </template>
 

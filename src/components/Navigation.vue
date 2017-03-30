@@ -1,6 +1,6 @@
 <template>  
     <nav role="navigation">
-      <router-link class="window home" to="/" exact><span>home</span></router-link>
+      <router-link class="window home" to="/" exact><span>dom</span></router-link>
       <router-link class="window misja" to="/misja"><span>misja</span></router-link>
       <router-link class="window program" to="/program"><span>program</span></router-link>
       <router-link class="window na-talerzu" to="/na-talerzu"><span>na talerzu</span></router-link>
