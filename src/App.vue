@@ -18,7 +18,6 @@ export default {
   data () {
     return {
       siteContent: null,
-      widnowWidth: null,
       isMobile: null
     }
   },
@@ -53,8 +52,7 @@ export default {
         })
     },
     getWindowWidth () {
-      this.widnowWidth = window.innerWidth
-      this.widnowWidth >= 1024 ? this.isMobile = false : this.isMobile = true
+      this.isMobile = window.innerWidth < 1024
     }
   },
   beforeDestroy () {
