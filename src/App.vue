@@ -1,11 +1,11 @@
 <template>
   <p v-if="!siteContent" class="loading">Loading...</p>
-  <div v-else-if='widnowWidth >= 1024' id="app">
+  <mobile v-else-if='isMobile' :siteContent="siteContent" />  
+  <div v-else id="app">
     <top-container />
     <router-view :siteContent="siteContent" />  
     <div class="footer"></div>  
   </div>
-  <mobile v-else :siteContent="siteContent" />  
 </template>
 <script>
 import Navigation from '@/components/Navigation'
@@ -18,7 +18,8 @@ export default {
   data () {
     return {
       siteContent: null,
-      widnowWidth: null
+      widnowWidth: null,
+      isMobile: null
     }
   },
   beforeMount () {
@@ -53,6 +54,7 @@ export default {
     },
     getWindowWidth () {
       this.widnowWidth = window.innerWidth
+      this.widnowWidth >= 1024 ? this.isMobile = false : this.isMobile = true
     }
   },
   beforeDestroy () {
