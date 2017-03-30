@@ -88,8 +88,6 @@ body, .top-container {
   display: flex;
   flex-direction: column;
   margin-top: 22px;
-  height: 100%;
-  width: 1024px;  
 }
 
 .loading {

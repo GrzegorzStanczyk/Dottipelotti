@@ -18,13 +18,11 @@
 </template>
 
 <style scoped>
-.languages-container {
-  font-family: "typoupright", cursive;
-	top: 100px;
-  right: 80px;
-	position: absolute;
-	font-size: 19px;
-}
+	.languages-container {
+		position: absolute;
+		top: 20px;
+		right: 75%;
+	}
 
 a {
 	display: flex;
@@ -54,5 +52,15 @@ a:nth-child(1) {
 a:nth-child(2) {
   top: -10px;
   left: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+	.languages-container {
+		font-family: "typoupright", cursive;
+		position: absolute;
+		top: 100px;
+		right: 80px;
+		font-size: 19px;
+	}
 }
 </style>

@@ -21,28 +21,35 @@ export default {
 
 <style>
 h1 {
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
 }
 
 h1.focusable:active,
 h1.focusable:focus {
-    clip: auto;
-    clip-path: none;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+.top-container {
+  position: relative;
+  background: url(../../static/images/top3.png) no-repeat center;
+  max-width: 1024px;
+  height: 255px;
 }
 
 .logo {
@@ -60,21 +67,17 @@ h1.focusable:focus {
   100% {transform: rotate(0deg);}
 }
 
-.top-container {
-  position: relative;
-  background: url(../../static/images/top3.png) no-repeat;
-  width: 1024px;
-  height: 255px;
-}
 
-.top-container::before {
-  content: '';
-  background: url(../../static/images/sloneczko.png) no-repeat;
-  position: absolute;
-  left: 26px;
-  top: 80px;  
-  width: 85px;
-  height: 83px;
-  animation: spin 20s linear 0s infinite;
+@media screen and (min-width: 1024px) {
+  .top-container::before {
+    content: '';
+    background: url(../../static/images/sloneczko.png) no-repeat;
+    position: absolute;
+    left: 26px;
+    top: 80px;  
+    width: 85px;
+    height: 83px;
+    animation: spin 20s linear 0s infinite;
+  }
 }
 </style>

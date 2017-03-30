@@ -46,51 +46,22 @@ export default {
 }
 
 .aside {
-  height: 100%;
-  &::after {
-    content: '';
-    display: block;
-    background: url(../../static/images/home.jpg) no-repeat center top;
-    width: 481px;
-    height: 238px;
-    margin-left: 10px;
-  }
+  display: none;
 }
 
-.blog-container {
+.blog-container {  
   display: flex;
   position: relative;
   justify-content: space-around;
-  padding-bottom: 10px;
-  width: 1024px;
-  background: url(../../static/images/content3.png) no-repeat center top;
-  background-size: 100% 100%;  
-  &::before {
-    content: '';
-    position: absolute;
-    left: -160px;
-    bottom: 0;
-    z-index: -10;
-    width: 224px;
-    height: 285px;
-    background: url(../../static/images/tlo4.png) no-repeat;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    right: -160px;
-    top: 0;
-    z-index: -10;
-    background: url(../../static/images/tlo5.png) no-repeat;
-    width: 234px;
-    height: 284px;
-  } 
+  background-color: #FCFFF0;
+  padding-bottom: 10px;   
+  
 }
 
 .blog-container-in {
   display: flex;
   flex-direction: column;
-  width: 450px;
+  max-width: 450px;
 }
 
 .blog-container-in-article {
@@ -163,5 +134,45 @@ export default {
   background: url(../../static/images/o3.png) no-repeat center center;
   right: -12px;
   bottom: -12px;
+}
+
+@media screen and (min-width: 1024px) {
+  .blog-container {
+    max-width: 1024px;
+    background: url(../../static/images/content3.png) no-repeat center top;
+    background-size: 100% 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -160px;
+      bottom: 0;
+      z-index: -10;
+      width: 224px;
+      height: 285px;
+      background: url(../../static/images/tlo4.png) no-repeat;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: -160px;
+      top: 0;
+      z-index: -10;
+      background: url(../../static/images/tlo5.png) no-repeat;
+      width: 234px;
+      height: 284px;
+    }  
+  }
+  .aside {
+    display: block;
+    height: 100%;
+    &::after {
+      content: '';
+      display: block;
+      background: url(../../static/images/home.jpg) no-repeat center top;
+      width: 481px;
+      height: 238px;
+      margin-left: 10px;
+    }
+  }
 }
 </style>
