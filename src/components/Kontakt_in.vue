@@ -41,17 +41,13 @@ export default {
   .color_1 {
     color: #ff4699;
   }
-
   .color_2 {
     color: #fbb63a;
   }
-
   .color_3 {
     color: #b3dc5b;
   }
-
   .color_4 {
     color: #00d1cb;
   }
-
 </style>

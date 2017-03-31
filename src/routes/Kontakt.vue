@@ -1,7 +1,7 @@
 <template>
   <section class="blog-container">
     <aside class="aside">
-      <KontaktIn :siteContent="siteContent"/>
+      <Zapisy :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
       <header class="center">
@@ -22,9 +22,10 @@
 
 <script>
 import KontaktIn from '@/components/Kontakt_in'
+import Zapisy from '@/components/Zapisy'
 export default {
   name: 'Kontakt',
-  components: { KontaktIn },
+  components: { KontaktIn, Zapisy },
   props: { siteContent: Object },
   computed: {
     pageContent () {
@@ -38,6 +39,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.aside-contact {
+  margin: 0;
+  text-align: center;  
+  &::before {
+    display: none;
+  }
+}
 .aside::after {
   background: url(../../static/images/kontakt.jpg) no-repeat center top;
 }
