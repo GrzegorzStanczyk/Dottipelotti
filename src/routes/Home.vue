@@ -54,13 +54,10 @@ export default {
   position: relative;
   justify-content: space-around;
   background-color: #FCFFF0;
-  padding-bottom: 10px;   
-  
+  padding-bottom: 10px;
 }
 
 .blog-container-in {
-  display: flex;
-  flex-direction: column;
   max-width: 450px;
 }
 

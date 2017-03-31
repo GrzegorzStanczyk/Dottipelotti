@@ -78,12 +78,6 @@ body {
   background: url(../static/images/tlo.jpg);
 }
 
-body, .top-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #app {
   display: flex;
   flex-direction: column;
@@ -103,6 +97,13 @@ h2 {
   height: 41px;
   padding-bottom: 10px;
   min-width: 1024px;   
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 </style>

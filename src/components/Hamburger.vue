@@ -17,16 +17,9 @@
             v-bind:class="{ nav__open: seen }"
 						role="navigation" 
 						aria-label="Main Menu">
-			<ul class="nav-links">
-				<li><a v-on:click="seen = !seen" href="#">Dom</a></li>
-				<li><a v-on:click="seen = !seen" href="#misja">Misja</a></li>
-				<li><a v-on:click="seen = !seen" href="#program">Program</a></li>
-				<li><a v-on:click="seen = !seen" href="#na-talerzu">Na talerzu</a></li>
-				<li><a v-on:click="seen = !seen" href="#galeria">Galeria</a></li>
-				<li><a v-on:click="seen = !seen" href="#kadra">Kadra</a></li>
-				<li><a v-on:click="seen = !seen" href="#cennik">Cennik</a></li>
-				<li><a v-on:click="seen = !seen" href="#kontakt">Kontakt</a></li>
-			</ul>
+        <ul class="nav-links">
+          <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.name }}</a></li>
+        </ul>
 		</nav>
 	</div>	
 </template>
@@ -36,7 +29,17 @@ export default {
   name: 'Hamburger',
   data () {
     return {
-      seen: false
+      seen: false,
+      anchors: [
+        { name: 'Dom', link: '' },
+        { name: 'Misja', link: 'misja' },
+        { name: 'Program', link: 'program' },
+        { name: 'Na talerzu', link: 'na-talerzu' },
+        { name: 'Galeria', link: 'galeria' },
+        { name: 'Kadra', link: 'kadra' },
+        { name: 'Cennik', link: 'cennik' },
+        { name: 'Kontakt', link: 'kontakt' }
+      ]
     }
   },
   methods: {
@@ -47,9 +50,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-.mask {
+.mask {  
   position: fixed;
   top: 0;
   right: 0;
@@ -59,12 +62,19 @@ export default {
   z-index: 15;
   background: rgba(255,225,0, 0.2);
   transition: all 1s ease;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .shadow {
-  background: rgba(255,225,0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  // background: rgba(255,225,0, 0.8);
   width: 100%;
   height: 100%;
+  visibility: visible;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-toggler {
@@ -132,7 +142,6 @@ export default {
   background-color: #00D1CB;
 }
 
-
 .nav-toggler__label, .nav__label {
 	border: 0;
   clip: rect(0 0 0 0);
@@ -144,66 +153,87 @@ export default {
 }
 
 .nav-bar {
-  display: none;  
-  a {
-    text-decoration: none;
-    color: inherit;
+  font-family: "typoupright", cursive;  
+  opacity:0;
+  visibility: hidden;
+  position: fixed;   
+  .nav-links{    
+    li {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      transition: all 1s ease;      
+      a {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+    li:first-child {
+      color: #00d1cb;
+    }
+    li:nth-child(2){
+      color: #ff4699;
+    }
+    li:nth-child(3){
+      color: #00d1cb;
+    }
+    li:nth-child(4){
+      color: #fbb63a;
+    }
+    li:nth-child(5){
+      color: #b3dc5b;
+    }
+    li:nth-child(6){
+      color: #ffe100;
+    }
+    li:nth-child(7){
+      color: #ff4699;
+    }
+    li:nth-child(8){
+      color: #00d1cb;
+    }
   } 
 } 
 
 .nav__open {
-  font-family: "typoupright", cursive;
-  font-size: 32px;
-  color: #FCFFF0;
-  display: block;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;  
-  .nav-links{
-    li {
-      position: fixed;      
-    }
+  visibility: visible;
+  opacity:1;
+  font-size: 36px;
+  z-index: 1000;
+  .nav-links{      
     li:first-child {
       top: 1%;
       left: 45%;
-      color: #00d1cb;
     }
     li:nth-child(2){
-      top: 6%;
-      left: 48%;
-      color: #ff4699;
+      top: 11%;
+      left: 44%;
     }
     li:nth-child(3){
-      top: 11%;
-      left: 51%;
-      color: #00d1cb;
+      top: 21%;
+      left: 45%;
     }
     li:nth-child(4){
-      top: 16%;
-      left: 54%;
-      color: #fbb63a;
+      top: 31%;
+      left: 46%;
     }
     li:nth-child(5){
-      top: 21%;
-      left: 57%;
-      color: #b3dc5b;
+      top: 41%;
+      left: 48%;
     }
     li:nth-child(6){
-      top: 26%;
-      left: 60%;
-      color: #ffe100;
+      top: 51%;
+      left: 51%;
     }
     li:nth-child(7){
-      top: 31%;
-      left: 63%;
-      color: #ff4699;
+      top: 61%;
+      left: 56%;
     }
     li:nth-child(8){
-      top: 36%;
-      left: 67%;
-      color: #00d1cb;
+      top: 71%;
+      left: 62%;
     }
-  }
+  } 
 }
 
 </style>

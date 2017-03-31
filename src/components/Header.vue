@@ -20,6 +20,13 @@ export default {
 </script>
 
 <style>
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   border: 0;
   clip: rect(0 0 0 0);
