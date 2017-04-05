@@ -1,9 +1,9 @@
 <template>
   <p v-if="!siteContent" class="loading">Loading...</p>
   <mobile v-else-if='isMobile' :siteContent="siteContent" />  
-  <div v-else id="app">
+  <div v-else id="app" >
     <top-container />
-    <router-view :siteContent="siteContent" />  
+    <router-view :siteContent="siteContent" :isMobile="isMobile" />  
     <div class="footer"></div>  
   </div>
 </template>

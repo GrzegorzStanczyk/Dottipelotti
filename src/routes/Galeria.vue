@@ -6,17 +6,25 @@
         <span class="o2"></span>
         <span class="o3"></span>
       </h2>
-    </header>      
-    <div class="galery">
-      <img v-for="media in pageContent" :src="media" alt="">   
-    </div>       
+    </header>
+    <modal :showModal="showModal" v-if="showModal" @close="showModal = false" />
+    <div class="galery" >
+      <img v-for="media in pageContent" :src="media" alt="" @click="showModal = true">
+    </div>
   </section>
 </template>
 
 <script>
+import Modal from '@/components/Modal'
 export default {
   name: 'Galeria',
-  props: { siteContent: Object },
+  components: { Modal },
+  props: { siteContent: Object, isMobile: Boolean },
+  data () {
+    return {
+      showModal: false
+    }
+  },
   computed: {
     pageContent () {
       return this.siteContent.media.map(media => media.media_details.sizes.thumbnail.source_url)
