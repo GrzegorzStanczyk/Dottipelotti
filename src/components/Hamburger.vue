@@ -95,6 +95,7 @@ export default {
   border: 0;
   cursor: pointer;
   transition: all .3s ease;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0, .2);
   &:focus {
     outline: 0;
     border: 15px dotted red;
@@ -117,12 +118,19 @@ export default {
     height: 10px;
     border-radius: 50%;
     box-shadow: 
+      2px 2px 2px rgba(0,0,0, .2),
       -5px 25px 0 rgb(255,225,0),
+      -3px 27px 2px rgba(0,0,0, .2),     
       5px 50px 0 rgb(255,225,0),
+      7px 52px 2px rgba(0,0,0, .2),  
       20px 70px 0 rgb(255,225,0),
+      22px 72px 2px rgba(0,0,0, .2),  
       45px 85px 0 rgb(255,225,0),
+      47px 87px 2px rgba(0,0,0, .2),  
       70px 90px 0 rgb(255,225,0),
-      100px 80px 0 rgb(255,225,0);        
+      72px 92px 2px rgba(0,0,0, .2),  
+      100px 80px 0 rgb(255,225,0),
+      102px 82px 2px rgba(0,0,0, .2);
   }    
 }
 
