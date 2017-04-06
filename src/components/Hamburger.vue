@@ -41,11 +41,6 @@ export default {
         { name: 'Kontakt', link: 'kontakt' }
       ]
     }
-  },
-  methods: {
-    toggleClass () {
-      console.log('jest')
-    }
   }
 }
 </script>
