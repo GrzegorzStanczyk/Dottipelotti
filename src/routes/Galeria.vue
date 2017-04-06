@@ -7,9 +7,9 @@
         <span class="o3"></span>
       </h2>
     </header>
-    <modal :showModal="showModal" v-if="showModal" @close="showModal = false" />
     <div class="gallery" >
-      <img v-for="media in pageContent" :src="media" alt="" @click="showModal = true">
+      <img v-for="(media, index) in pageContent" :src="media" alt="" @click="imageClick(index)">
+      <modal :imageIndex="imageIndex" :siteContent="siteContent" :showModal="showModal" v-if="showModal" @close="showModal = false" />
     </div>
   </section>
 </template>
@@ -22,7 +22,8 @@ export default {
   props: { siteContent: Object, isMobile: Boolean },
   data () {
     return {
-      showModal: false
+      showModal: false,
+      imageIndex: ''
     }
   },
   computed: {
@@ -30,8 +31,11 @@ export default {
       return this.siteContent.media.map(media => media.media_details.sizes.thumbnail.source_url)
     }
   },
-  mounted () {
-    console.log('Galeria siteContent', this.siteContent.media)
+  methods: {
+    imageClick (index) {
+      this.showModal = true
+      this.imageIndex = index
+    }
   }
 }
 </script>
@@ -52,9 +56,9 @@ export default {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  
+  justify-content: center;  
 }
+
 .title {
   background-color: #b3dc5b;   
 }
