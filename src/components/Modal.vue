@@ -80,7 +80,7 @@ export default {
 
 .modal-container {
   position: relative;
-  width: 80%;
+  width: 50%;
   margin: 0px auto;  
   padding: 20px 27px;
   background-color: #fff;
@@ -91,10 +91,8 @@ export default {
 }
 
 .modal-img {
-  width: auto;
-  height: auto;
+  width: 100%;
   max-width: 100%;
-  max-height: 100%;
   border: 1px solid #919191;
   overflow: visible;
 }
@@ -179,5 +177,11 @@ export default {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+@media screen and (min-height: 1000px) {
+  .modal-container {
+    width: 80%;
+  }
 }
 </style>
