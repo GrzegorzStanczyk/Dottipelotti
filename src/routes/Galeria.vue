@@ -8,7 +8,7 @@
       </h2>
     </header>
     <modal :showModal="showModal" v-if="showModal" @close="showModal = false" />
-    <div class="galery" >
+    <div class="gallery" >
       <img v-for="media in pageContent" :src="media" alt="" @click="showModal = true">
     </div>
   </section>
@@ -43,12 +43,18 @@ export default {
   max-width: 1024px;
 }
 
-.galery, .blog-container {
+.blog-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
 .title {
   background-color: #b3dc5b;   
 }
