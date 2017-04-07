@@ -8,8 +8,15 @@
       </h2>
     </header>
     <div class="gallery" >
-      <img v-for="(media, index) in pageContent" :src="media" alt="" @click="imageClick(index)">
-      <modal :imageIndex="imageIndex" :siteContent="siteContent" :showModal="showModal" v-if="showModal" @close="showModal = false" />
+      <img v-for="(media, index) in pageContent" 
+          :src="media" alt="" 
+          @click="imageClick(index)" 
+          class="gallery-images">
+      <modal :imageIndex="imageIndex" 
+            :siteContent="siteContent"
+            :showModal="showModal" 
+            v-if="showModal" 
+            @close="showModal = false" />
     </div>
   </section>
 </template>
@@ -57,6 +64,15 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;  
+}
+
+.gallery-images {
+  cursor: pointer;
+  transition: opacity .6s ease;
+}
+
+.gallery-images:hover {
+  opacity: 0.7;
 }
 
 .title {

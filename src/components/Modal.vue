@@ -1,11 +1,8 @@
 <template>
   <transition name="modal">
     <div class="modal-mask" >
-      <div class="modal-wrapper">
-        <div class="modal-container" @click="currentImage(imageIndex)">
-          
-          <div class="modal-header">
-            <slot name="header">
+      <div class="modal-wrapper" @click="$emit('close')">
+        <div class="modal-container"  @click.stop>
               <button class="btn modal-close-button"
                       @click="$emit('close')"
                       type="button"
@@ -13,21 +10,20 @@
                 <span class="modal-button__label">Close lightbox</span>
               </button>
               <button class="btn modal-preview-button"
-                      @click="$emit('close')"
+                      @click="plusSlides(-1)"
                       type="button"
                       aria-label="close lightbox">
                 <span class="modal-button__label">Preview picture</span>
               </button>
               <button class="btn modal-next-button"
-                      @click="$emit('close')"
+                      @click="plusSlides(1)"
                       type="button"
                       aria-label="close lightbox">
                 <span class="modal-button__label">Next picture</span>
-              </button>
-            </slot>
-          </div>
-          <img :src="this.siteContent.media[imageIndex].media_details.sizes.full.source_url" @click="imageIndex" alt="" class="modal-img">
-          
+              </button>          
+          <img v-for="(image, index) in pageContent" 
+              :src="image" alt="" 
+              class="modal-img">
         </div>
       </div>
     </div>
@@ -40,7 +36,7 @@ export default {
   props: { siteContent: Object, isMobile: Boolean, imageIndex: Number },
   data () {
     return {
-
+      curentImage: this.imageIndex
     }
   },
   computed: {
@@ -48,13 +44,27 @@ export default {
       return this.siteContent.media.map(media => media.media_details.sizes.full.source_url)
     }
   },
-  methods: {
-    currentImage (index) {
-      console.log(index)
-    }
-  },
   mounted () {
-    console.log('Galeria siteContent', this.siteContent.media)
+    this.$nextTick(() => {
+      this.showSlides(this.curentImage)
+    })
+  },
+  methods: {
+    showSlides (curentImage) {
+      const slides = document.querySelectorAll('.modal-img')
+      if (curentImage > this.siteContent.media.length) { this.curentImage = 0 }
+      if (curentImage < 1) { this.curentImage = this.siteContent.media.length }
+      // slides.forEach(slide => slide.classList.add('hide'))
+      slides[curentImage].classList.add('hide')
+      slides[curentImage].classList.add('show')
+    },
+    plusSlides (n) {
+      this.showSlides(this.curentImage += n)
+      console.log(this.curentImage)
+    },
+    currentImage () {
+      console.log(this.curentImage)
+    }
   }
 }
 </script>
@@ -80,7 +90,9 @@ export default {
 
 .modal-container {
   position: relative;
-  width: 50%;
+  box-sizing: border-box;
+  width: 60%;
+  max-width: 1060px;
   margin: 0px auto;  
   padding: 20px 27px;
   background-color: #fff;
@@ -95,31 +107,43 @@ export default {
   max-width: 100%;
   border: 1px solid #919191;
   overflow: visible;
+  animation: fade 1s;
+  display: none;
 }
 
-.btn {
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.btn {  
+  width: 71px;
+  height: 71px;
+  top: 50%;
   position: absolute;  
   border-radius: 50%;
   border: 0;
   cursor: pointer;
+  transition: opacity .6s ease;
   &:focus{
     outline: none;
   }
 }
 
+.btn:hover {
+  opacity: 0.8;
+}
+
 .modal-preview-button {
-  width: 71px;
-  height: 71px;
-  top: 50%;
   left: -60px;
   background: url(../../static/images/w-lewo.png) no-repeat center center;
   transform: translateY(-50%)
 }
 
 .modal-next-button {
-  width: 71px;
-  height: 71px;
-  top: 50%;
   right: -60px;
   background: url(../../static/images/w-prawo.png) no-repeat center center;
   transform: translateY(-50%)
@@ -183,5 +207,10 @@ export default {
   .modal-container {
     width: 80%;
   }
+}
+
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
 }
 </style>

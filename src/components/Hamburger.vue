@@ -56,14 +56,13 @@ export default {
   width: 0;
   z-index: 15;
   background: rgba(255,225,0, 0.2);
-  transition: all 1s ease;
+  transition: all 1s ease-out;
   visibility: hidden;
   opacity: 0;
 }
 
 .shadow {
   background: rgba(0, 0, 0, 0.8);
-  // background: rgba(255,225,0, 0.8);
   width: 100%;
   height: 100%;
   visibility: visible;
@@ -165,7 +164,7 @@ export default {
       position: fixed;
       top: 0;
       left: 100%;
-      transition: all 1s ease;      
+      transition: all 1s ease-in;      
       a {
         text-decoration: underline;
         color: inherit;
