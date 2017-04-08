@@ -54,14 +54,13 @@ export default {
   },
   methods: {
     showSlides (n) {
-      // const slides = document.querySelectorAll('.modal-img')
       if (n > this.imagesLength) { this.curentImage = 0 }
       if (n < 0) { this.curentImage = this.imagesLength }
       this.$refs.img[this.curentImage].classList.add('show')
     },
     plusSlides (n) {
-      const slides = document.querySelectorAll('.modal-img')
-      slides[this.curentImage].classList.remove('show')
+      // const slides = document.querySelectorAll('.modal-img')
+      this.$refs.img[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
       console.log(this.curentImage)
     },
