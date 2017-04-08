@@ -12,7 +12,7 @@
     <Misja id="misja" :siteContent="siteContent" />
     <Program id="program" :siteContent="siteContent" />
     <NaTalerzu id="na-talerzu" :siteContent="siteContent" />
-    <Galeria id="galeria" :siteContent="siteContent" />
+    <Galeria id="galeria" :siteContent="siteContent" :isMobile="isMobile" />
     <Kadra id="kadra" :siteContent="siteContent" />
     <Cennik id="cennik" :siteContent="siteContent" />
     <Kontakt id="kontakt" :siteContent="siteContent" />
@@ -35,7 +35,7 @@ import Hamburger from '@/components/Hamburger'
 export default {
   name: 'Mobile',
   components: { Home, Misja, Program, NaTalerzu, Galeria, Kadra, Cennik, Kontakt, Language, Hamburger },
-  props: { siteContent: Object }
+  props: { siteContent: Object, isMobile: Boolean }
 }
 </script>
 

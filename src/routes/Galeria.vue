@@ -7,7 +7,9 @@
         <span class="o3"></span>
       </h2>
     </header>
-    <div class="gallery" >
+    <carousel v-if="isMobile"
+              :siteContent="siteContent"/>
+    <div v-else class="gallery" >
       <img v-for="(media, index) in pageContent" 
           :src="media" alt="" 
           @click="imageClick(index)" 
@@ -22,10 +24,11 @@
 </template>
 
 <script>
+import Carousel from '@/components/Carousel'
 import Modal from '@/components/Modal'
 export default {
   name: 'Galeria',
-  components: { Modal },
+  components: { Modal, Carousel },
   props: { siteContent: Object, isMobile: Boolean },
   data () {
     return {
