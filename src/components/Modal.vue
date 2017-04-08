@@ -20,10 +20,12 @@
                       type="button"
                       aria-label="close lightbox">
                 <span class="modal-button__label">Next picture</span>
-              </button>          
+              </button>
           <img v-for="(image, index) in pageContent" 
               :src="image" alt="" 
-              class="modal-img">
+              class="modal-img"
+              @click="currentImage"
+              ref="img">
         </div>
       </div>
     </div>
@@ -36,7 +38,8 @@ export default {
   props: { siteContent: Object, isMobile: Boolean, imageIndex: Number },
   data () {
     return {
-      curentImage: this.imageIndex
+      curentImage: this.imageIndex,
+      imagesLength: this.siteContent.media.length - 1
     }
   },
   computed: {
@@ -46,19 +49,19 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.showSlides(this.curentImage)
+      this.showSlides(this.imageIndex)
     })
   },
   methods: {
-    showSlides (curentImage) {
-      const slides = document.querySelectorAll('.modal-img')
-      if (curentImage > this.siteContent.media.length) { this.curentImage = 0 }
-      if (curentImage < 1) { this.curentImage = this.siteContent.media.length }
-      // slides.forEach(slide => slide.classList.add('hide'))
-      slides[curentImage].classList.add('hide')
-      slides[curentImage].classList.add('show')
+    showSlides (n) {
+      // const slides = document.querySelectorAll('.modal-img')
+      if (n > this.imagesLength) { this.curentImage = 0 }
+      if (n < 0) { this.curentImage = this.imagesLength }
+      this.$refs.img[this.curentImage].classList.add('show')
     },
     plusSlides (n) {
+      const slides = document.querySelectorAll('.modal-img')
+      slides[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
       console.log(this.curentImage)
     },
@@ -113,10 +116,6 @@ export default {
 
 .show {
   display: block;
-}
-
-.hide {
-  display: none;
 }
 
 .btn {  
