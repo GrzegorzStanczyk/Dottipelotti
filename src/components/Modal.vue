@@ -59,7 +59,6 @@ export default {
       this.$refs.img[this.curentImage].classList.add('show')
     },
     plusSlides (n) {
-      // const slides = document.querySelectorAll('.modal-img')
       this.$refs.img[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
       console.log(this.curentImage)
