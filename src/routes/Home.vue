@@ -83,10 +83,7 @@ export default {
   font-weight: normal;
   display: inline-block;
   font-size: 40px;
-  padding: 5px 10px 0px 10px;  
   margin: 25px auto;
-  padding-left: 5%;
-  padding-right: 5%;
   min-width: 220px;
   &.home {
     background: #00d1cb;
