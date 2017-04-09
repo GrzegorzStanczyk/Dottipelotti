@@ -76,9 +76,14 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-img {
+.gallery-mobile {
   width: 100%;
-  max-width: 100%;
+}
+.modal-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 95%;
   border: 1px solid #919191;
   overflow: visible;
   animation: fade 1s;

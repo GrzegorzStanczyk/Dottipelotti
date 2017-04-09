@@ -67,8 +67,6 @@ export default {
   src: url('../static/font/ufonts.com_typoupright-bt.woff')  format('woff'),
        url('../static/font/ufonts.com_typoupright-bt.ttf')  format('truetype');
 }
-html {
-}
 
 body {
   font-family: Verdana, Helvetica, Arial, sans-serif;
