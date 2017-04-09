@@ -45,48 +45,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
+.gallery-mobile {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: nowrap;
+  // overflow: hidden;
 }
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-container {
+.modal-img {  
   position: relative;
-  box-sizing: border-box;
-  width: 60%;
-  max-width: 1060px;
-  margin: 0px auto;  
-  padding: 20px 27px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-img {
-  width: 100%;
-  max-width: 100%;
+  display: inline-block;
+  width: 90%;
+  max-width: 90%;
   border: 1px solid #919191;
   overflow: visible;
   animation: fade 1s;
   // display: none;
-}
-
-.show {
-  display: block;
 }
 
 .btn {  
@@ -119,36 +93,6 @@ export default {
   transform: translateY(-50%)
 }
 
-.modal-close-button {
-  top: -82px;
-  right: -75px;
-  width: 100px;
-  height: 100px;
-  background: url(../../static/images/zamknij.png) no-repeat center center;
-  &::before {
-    content: '';
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 0px;
-    right: -15px;
-    background-color: #FFF;
-    border-radius: 50%;
-    box-shadow: 
-      -30px -25px 0px #FFF;
-  }
-  &::after {
-    content: '';
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: -41px;
-    right: -3px;
-    background-color: #FFF;
-    border-radius: 50%;
-  }
-}
-
 .modal-button__label {
 	border: 0;
   clip: rect(0 0 0 0);
@@ -159,28 +103,4 @@ export default {
   position: absolute;
 }
 
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-@media screen and (min-height: 1000px) {
-  .modal-container {
-    width: 80%;
-  }
-}
-
-@keyframes fade {
-  from {opacity: 0.4}
-  to {opacity: 1}
-}
 </style>
