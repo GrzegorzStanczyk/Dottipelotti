@@ -54,9 +54,32 @@ export default {
 }
 .modal-img {  
   position: relative;
+<<<<<<< HEAD
   display: inline-block;
   width: 90%;
   max-width: 90%;
+=======
+  box-sizing: border-box;
+  width: 60%;
+  max-width: 1060px;
+  margin: 0px auto;  
+  padding: 20px 27px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.gallery-mobile {
+  width: 100%;
+}
+.modal-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 95%;
+>>>>>>> ed5a176e3c19a294401c2b5f6a4970f7251701d9
   border: 1px solid #919191;
   overflow: visible;
   animation: fade 1s;

@@ -1,5 +1,5 @@
 <template> 
-	<div class="row">
+	<div class="mobile-navigation">
 		<div class="mask"
           v-bind:class="{ shadow: seen }"
           v-on:click="seen = !seen"/>
