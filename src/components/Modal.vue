@@ -49,6 +49,7 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.showSlides(this.imageIndex)
+      this.closeModal()
     })
   },
   methods: {
@@ -60,6 +61,13 @@ export default {
     plusSlides (n) {
       this.$refs.img[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
+    },
+    closeModal () {
+      document.addEventListener('keydown', evt => {
+        if (evt.keyCode === 27) {
+          this.$emit('close')
+        }
+      }, false)
     }
   }
 }
