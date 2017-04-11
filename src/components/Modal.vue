@@ -3,28 +3,27 @@
     <div class="modal-mask" >
       <div class="modal-wrapper" @click="$emit('close')">
         <div class="modal-container"  @click.stop>
-              <button class="btn modal-close-button"
-                      @click="$emit('close')"
-                      type="button"
-                      aria-label="close lightbox">
-                <span class="modal-button__label">Close lightbox</span>
-              </button>
-              <button class="btn modal-preview-button"
-                      @click="plusSlides(-1)"
-                      type="button"
-                      aria-label="close lightbox">
-                <span class="modal-button__label">Preview picture</span>
-              </button>
-              <button class="btn modal-next-button"
-                      @click="plusSlides(1)"
-                      type="button"
-                      aria-label="close lightbox">
-                <span class="modal-button__label">Next picture</span>
-              </button>
+          <button class="btn modal-close-button"
+                  @click="$emit('close')"
+                  type="button"
+                  aria-label="close lightbox">
+            <span class="modal-button__label">Close lightbox</span>
+          </button>
+          <button class="btn modal-preview-button"
+                  @click="plusSlides(-1)"
+                  type="button"
+                  aria-label="preview lightbox">
+            <span class="modal-button__label">Preview picture</span>
+          </button>
+          <button class="btn modal-next-button"
+                  @click="plusSlides(1)"
+                  type="button"
+                  aria-label="next lightbox">
+            <span class="modal-button__label">Next picture</span>
+          </button>
           <img v-for="(image, index) in pageContent" 
               :src="image" alt="" 
               class="modal-img"
-              @click="currentImage"
               ref="img">
         </div>
       </div>
@@ -61,10 +60,6 @@ export default {
     plusSlides (n) {
       this.$refs.img[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
-      console.log(this.curentImage)
-    },
-    currentImage () {
-      console.log(this.curentImage)
     }
   }
 }

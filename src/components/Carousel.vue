@@ -1,18 +1,27 @@
 <template>
-  <div class="gallery-mobile">
-    <img v-for="(image, index) in pageContent" 
+  <div class="carousel">
+    <button class="btn carousel__preview-button"
+            @click="plusSlides(-1)"
+            type="button">
+    </button>
+    <button class="btn carousel__next-button"
+            @click="plusSlides(1)"
+            type="button">
+    </button>
+    <img v-for="image in pageContent" 
       :src="image" alt="" 
-      class="modal-img">
+      class="carousel__img"
+      ref="img">
   </div>
 </template>
 
 <script>
 export default {
   name: 'Carousel',
-  props: { siteContent: Object, imageIndex: Number },
+  props: { siteContent: Object },
   data () {
     return {
-      curentImage: this.imageIndex,
+      slideIndex: 0,
       imagesLength: this.siteContent.media.length - 1
     }
   },
@@ -23,45 +32,41 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.showSlides(this.imageIndex)
+      this.showSlides(this.slideIndex)
     })
   },
   methods: {
     showSlides (n) {
-      if (n > this.imagesLength) { this.curentImage = 0 }
-      if (n < 0) { this.curentImage = this.imagesLength }
-      this.$refs.img[this.curentImage].classList.add('show')
+      if (n > this.imagesLength) { this.slideIndex = 0 }
+      if (n < 0) { this.slideIndex = this.imagesLength }
+      this.$refs.img[this.slideIndex].classList.add('show')
     },
     plusSlides (n) {
-      this.$refs.img[this.curentImage].classList.remove('show')
-      this.showSlides(this.curentImage += n)
-      console.log(this.curentImage)
-    },
-    currentImage () {
-      console.log(this.curentImage)
+      this.$refs.img[this.slideIndex].classList.remove('show')
+      this.showSlides(this.slideIndex += n)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.gallery-mobile {
+.carousel {
   width: 100%;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: nowrap;
-  // overflow: hidden;
+  position: relative;  
 }
-.modal-img {  
-  position: relative;
-  display: block;
+.carousel__img {  
+  display: none;
   max-width: 95%;
   margin: 0 auto;
 }
 
-.btn {  
-  width: 71px;
-  height: 71px;
+.show {
+  display: block;
+}
+
+.btn {
+  width: 8%;
+  height: 10%;
   top: 50%;
   position: absolute;  
   border-radius: 50%;
@@ -77,26 +82,18 @@ export default {
   opacity: 0.8;
 }
 
-.modal-preview-button {
-  left: -60px;
+.carousel__preview-button {
+  left: 2%;
   background: url(../../static/images/w-lewo.png) no-repeat center center;
-  transform: translateY(-50%)
+  background-size: 100% 100%;
+  transform: translateY(-50%);
 }
 
-.modal-next-button {
-  right: -60px;
+.carousel__next-button {
+  right: 2%;
   background: url(../../static/images/w-prawo.png) no-repeat center center;
-  transform: translateY(-50%)
-}
-
-.modal-button__label {
-	border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  background-size: 100% 100%;
+  transform: translateY(-50%);
 }
 
 </style>
