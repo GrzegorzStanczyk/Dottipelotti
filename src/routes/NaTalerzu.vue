@@ -12,7 +12,7 @@
       </header>
       <div class="border">
         <div class="blog-container-in-article">
-          <div tabindex="0" v-html="pageContent" class="content" />        
+          <div tabindex="0" v-html="pageContent.pl" class="content" />        
         </div>
       </div>
     </article>
@@ -27,7 +27,10 @@ export default {
   props: { siteContent: Object },
   computed: {
     pageContent () {
-      return this.siteContent.pages.find(page => page.slug === 'na-talerzu').content.rendered
+      return {
+        pl: this.siteContent.pages.pl.find(page => page.slug === 'na-talerzu_pl').content.rendered,
+        en: this.siteContent.pages.en.find(page => page.slug === 'na-talerzu_en').content.rendered
+      }
     }
   },
   mounted () {

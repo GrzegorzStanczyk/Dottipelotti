@@ -1,6 +1,7 @@
 <template>
 	<div class="languages-container">
-		<a href="/" 
+		<a href="/"
+				v-on:click.stop.prevent="setSiteLang('pl')"
 				title="Wybierz polski jezyk" 
 				aria-label="Wybierz polski jezyk"
 				lang="pl" 
@@ -8,6 +9,7 @@
 				class="langPL active">pl
 		</a>
 		<a href="/" 
+				v-on:click.stop.prevent="setSiteLang('en')"
 				title="Choose english language"
 				aria-label="Choose english language"
 				lang="en" 
@@ -16,6 +18,18 @@
 		</a>
 	</div>
 </template>
+
+<script>
+export default {
+  name: 'language',
+  methods: {
+    setSiteLang (lang) {
+      this.$emit(lang)
+      console.log(lang)
+    }
+  }
+}
+</script>
 
 <style scoped>
 	.languages-container {

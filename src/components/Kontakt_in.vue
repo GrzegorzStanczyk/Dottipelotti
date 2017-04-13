@@ -1,5 +1,5 @@
 <template>
-  <div v-html="pageContent" class="content aside-contact" />
+  <div v-html="pageContent.pl" class="content aside-contact" />
 </template>
 
 <script>
@@ -8,7 +8,10 @@ export default {
   props: { siteContent: Object },
   computed: {
     pageContent () {
-      return this.siteContent.pages.find(page => page.slug === 'kontakt_in').content.rendered
+      return {
+        pl: this.siteContent.pages.pl.find(page => page.slug === 'kontakt_in_pl').content.rendered,
+        en: this.siteContent.pages.en.find(page => page.slug === 'kontakt_in_en').content.rendered
+      }
     }
   },
   mounted () {

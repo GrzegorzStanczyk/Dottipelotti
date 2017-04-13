@@ -14,7 +14,7 @@
       <div class="border">
         <div class="blog-container-in-article">
           <img src="../../static/images/aktualnosci.jpg" alt="Aktualności">
-          <div tabindex="0" v-html="pageContent" class="content" />
+          <div tabindex="0" v-html="pageContent.pl" class="content" />
           <a href="/aktualnosci">archiwum aktualności</a>
         </div> 
       </div>
@@ -30,7 +30,10 @@ export default {
   props: { siteContent: Object },
   computed: {
     pageContent () {
-      return this.siteContent.pages.find(page => page.slug === 'home').content.rendered
+      return {
+        pl: this.siteContent.pages.pl.find(page => page.slug === 'home_pl').content.rendered,
+        en: this.siteContent.pages.en.find(page => page.slug === 'home_en').content.rendered
+      }
     }
   },
   mounted () {

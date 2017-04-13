@@ -13,7 +13,7 @@
       </header>
       <div class="border">
         <div class="blog-container-in-article">
-          <KontaktIn :siteContent="siteContent"/>       
+          <KontaktIn :siteContent="siteContent"/>
         </div>
       </div>
     </article>
@@ -29,7 +29,10 @@ export default {
   props: { siteContent: Object },
   computed: {
     pageContent () {
-      return this.siteContent.pages.find(page => page.slug === 'kontakt').content.rendered
+      return {
+        pl: this.siteContent.pages.pl.find(page => page.slug === 'kontakt_pl').content.rendered,
+        en: this.siteContent.pages.en.find(page => page.slug === 'kontakt_en').content.rendered
+      }
     }
   },
   mounted () {

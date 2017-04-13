@@ -33,7 +33,7 @@ export default {
   methods: {
     getSiteContent () {
       const requests = [
-        this.$http.get('pages'),
+        this.$http.get('pages/?per_page=16'),
         this.$http.get('posts'),
         this.$http.get('media/?per_page=25')
       ]
@@ -41,7 +41,10 @@ export default {
       Promise.all(requests)
         .then(response => {
           this.siteContent = {
-            pages: response[0].body,
+            pages: {
+              en: response[0].body.filter(val => { return /_en/.test(val.slug) }),
+              pl: response[0].body.filter(val => { return /_pl/.test(val.slug) })
+            },
             posts: response[1].body,
             media: response[2].body
           }
