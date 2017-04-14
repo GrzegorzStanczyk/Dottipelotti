@@ -1,20 +1,22 @@
 <template>
-	<div class="languages-container">
+	<div class="languages-container" v-bind:class="active">
 		<a href="/"
-				v-on:click.stop.prevent="setSiteLang('pl')"
+				v-on:click.stop.prevent="chooseSiteLang('pl')"
+        v-on:click="makeActive('pl')"
 				title="Wybierz polski jezyk" 
 				aria-label="Wybierz polski jezyk"
 				lang="pl" 
 				hreflang="Polish" 
-				class="langPL active">pl
+				class="pl">pl
 		</a>
 		<a href="/" 
-				v-on:click.stop.prevent="setSiteLang('en')"
+				v-on:click.stop.prevent="chooseSiteLang('en')"
+        v-on:click="makeActive('en')"
 				title="Choose english language"
 				aria-label="Choose english language"
 				lang="en" 
 				hreflang="English" 
-				class="langEN">en
+				class="en">en
 		</a>
 	</div>
 </template>
@@ -22,10 +24,17 @@
 <script>
 export default {
   name: 'language',
+  data () {
+    return {
+      active: 'pl'
+    }
+  },
   methods: {
-    setSiteLang (lang) {
-      this.$emit(lang)
-      console.log(lang)
+    chooseSiteLang (lang) {
+      this.$emit('setSiteLang', lang)
+    },
+    makeActive: function (item) {
+      this.active = item
     }
   }
 }
@@ -50,7 +59,8 @@ a {
   color: #c7c3bc;
 }
 
-a.active {
+.languages-container.pl .pl,
+.languages-container.en .en {
   color: #726a58;
 }
 
