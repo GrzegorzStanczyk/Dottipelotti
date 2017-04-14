@@ -66,14 +66,14 @@ export default {
       this.showSlides(this.curentImage += n)
     },
     closeModal () {
-      document.addEventListener('keydown', evt => {
+      document.addEventListener('keyup', evt => {
         if (evt.keyCode === 27) {
           this.$emit('close')
         }
       }, false)
     },
     arrowSlide () {
-      document.addEventListener('keydown', evt => {
+      document.addEventListener('keyup', evt => {
         if (evt.keyCode === 37) {
           console.log('keypresed')
           this.plusSlides(-1)
@@ -85,7 +85,7 @@ export default {
     }
   },
   beforeDestroy () {
-    document.removeEventListener('keydown', this.arrowSlide)
+    document.removeEventListener('keyup', this.arrowSlide)
   }
 }
 </script>
