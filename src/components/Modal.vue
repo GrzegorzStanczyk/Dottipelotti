@@ -52,6 +52,9 @@ export default {
       this.closeModal()
     })
   },
+  created () {
+    this.arrowSlide()
+  },
   methods: {
     showSlides (n) {
       if (n > this.imagesLength) { this.curentImage = 0 }
@@ -68,7 +71,21 @@ export default {
           this.$emit('close')
         }
       }, false)
+    },
+    arrowSlide () {
+      document.addEventListener('keydown', evt => {
+        if (evt.keyCode === 37) {
+          console.log('keypresed')
+          this.plusSlides(-1)
+        } else if (evt.keyCode === 39) {
+          console.log('keypresed')
+          this.plusSlides(1)
+        }
+      }, false)
     }
+  },
+  beforeDestroy () {
+    document.removeEventListener('keydown', this.arrowSlide)
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>  
   <div id="mobileApp">
-    <Hamburger />
+    <Hamburger :siteContent="siteContent"/>
     <header>
       <h1 class="focusable">Witajcie w Dotti Pelotti</h1>
       <div class="top-container"> 

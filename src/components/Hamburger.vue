@@ -17,8 +17,11 @@
             v-bind:class="{ nav__open: seen }"
 						role="navigation" 
 						aria-label="Main Menu">
-        <ul class="nav-links">
-          <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.name }}</a></li>
+        <ul class="nav-links" v-if="siteContent.lang === 'pl'">
+          <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.name }}</a></li>       
+        </ul>
+        <ul class="nav-links" v-else>
+          <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.nameEN }}</a></li>       
         </ul>
 		</nav>
 	</div>	
@@ -27,18 +30,19 @@
 <script>
 export default {
   name: 'Hamburger',
+  props: { siteContent: Object },
   data () {
     return {
       seen: false,
       anchors: [
-        { name: 'Dom', link: '' },
-        { name: 'Misja', link: 'misja' },
-        { name: 'Program', link: 'program' },
-        { name: 'Na talerzu', link: 'na-talerzu' },
-        { name: 'Galeria', link: 'galeria' },
-        { name: 'Kadra', link: 'kadra' },
-        { name: 'Cennik', link: 'cennik' },
-        { name: 'Kontakt', link: 'kontakt' }
+        { name: 'Dom', nameEN: 'Home', link: '' },
+        { name: 'Misja', nameEN: 'Mision', link: 'misja' },
+        { name: 'Program', nameEN: 'Program', link: 'program' },
+        { name: 'Na talerzu', nameEN: 'On the plate', link: 'na-talerzu' },
+        { name: 'Galeria', nameEN: 'Gallery', link: 'galeria' },
+        { name: 'Kadra', nameEN: 'Personel', link: 'kadra' },
+        { name: 'Cennik', nameEN: 'Price list', link: 'cennik' },
+        { name: 'Kontakt', nameEN: 'Contact', link: 'kontakt' }
       ]
     }
   }
