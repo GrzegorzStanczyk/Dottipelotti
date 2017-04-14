@@ -5,7 +5,7 @@
     </aside>
     <article class="blog-container-in">
       <header class="center">
-        <h2 class="title">kontakt
+        <h2 class="title">{{title}}
           <span class="o1"></span>
           <span class="o2"></span>
           <span class="o3"></span>
@@ -26,9 +26,15 @@ import Zapisy from '@/components/Zapisy'
 export default {
   name: 'Kontakt',
   components: { KontaktIn, Zapisy },
+  data () {
+    return {
+      title: null
+    }
+  },
   props: { siteContent: Object },
   computed: {
     pageContent () {
+      this.title = this.siteContent.lang === 'pl' ? 'kontakt' : 'contact'
       return {
         pl: this.siteContent.pages.pl.find(page => page.slug === 'kontakt_pl').content.rendered,
         en: this.siteContent.pages.en.find(page => page.slug === 'kontakt_en').content.rendered

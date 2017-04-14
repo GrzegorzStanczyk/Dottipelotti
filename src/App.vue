@@ -1,8 +1,8 @@
 <template>
   <p v-if="!siteContent" class="loading">Loading...</p>
-  <mobile v-else-if='isMobile' :siteContent="siteContent" :isMobile="isMobile"/>  
+  <mobile v-on:setSiteLang="getSiteLang" v-else-if='isMobile' :siteContent="siteContent" :isMobile="isMobile"/>  
   <div v-else id="app" >
-    <top-container />
+    <top-container v-on:setSiteLang="getSiteLang"/>
     <router-view :siteContent="siteContent" :isMobile="isMobile" />  
     <div class="footer"></div>  
   </div>
@@ -46,7 +46,8 @@ export default {
               pl: response[0].body.filter(val => { return /_pl/.test(val.slug) })
             },
             posts: response[1].body,
-            media: response[2].body
+            media: response[2].body,
+            lang: 'pl'
           }
         })
         .catch(error => {
@@ -55,6 +56,9 @@ export default {
     },
     getWindowWidth () {
       this.isMobile = window.innerWidth < 1024
+    },
+    getSiteLang (lang) {
+      this.siteContent.lang = lang
     }
   },
   beforeDestroy () {

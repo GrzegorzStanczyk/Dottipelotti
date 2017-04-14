@@ -5,7 +5,7 @@
       <h1 class="focusable">Witajcie w Dotti Pelotti</h1>
       <div class="top-container"> 
         <div class="logo" />
-        <Language />
+        <Language v-on:setSiteLang="getSiteLang"/>
       </div>
     </header>
     <Home id="home" :siteContent="siteContent" />
@@ -35,7 +35,12 @@ import Hamburger from '@/components/Hamburger'
 export default {
   name: 'Mobile',
   components: { Home, Misja, Program, NaTalerzu, Galeria, Kadra, Cennik, Kontakt, Language, Hamburger },
-  props: { siteContent: Object, isMobile: Boolean }
+  props: { siteContent: Object, isMobile: Boolean },
+  methods: {
+    getSiteLang (lang) {
+      this.$emit('setSiteLang', lang)
+    }
+  }
 }
 </script>
 

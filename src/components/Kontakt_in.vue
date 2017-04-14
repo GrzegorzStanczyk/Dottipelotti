@@ -1,5 +1,6 @@
 <template>
-  <div v-html="pageContent.pl" class="content aside-contact" />
+  <div v-if="siteContent.lang === 'pl'" v-html="pageContent.pl" class="content aside-contact" />
+  <div v-else v-html="pageContent.en" class="content aside-contact" />
 </template>
 
 <script>

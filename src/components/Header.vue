@@ -3,7 +3,7 @@
     <h1 class="focusable">Witajcie w Dotti Pelotti</h1>
     <div class="top-container"> 
       <div class="logo" />
-      <Language />
+      <Language v-on:setSiteLang="getSiteLang"/>
     </div>
     <Navigation />
   </header>
@@ -15,7 +15,12 @@ import Navigation from '@/components/Navigation'
 
 export default {
   name: 'Header',
-  components: { Language, Navigation }
+  components: { Language, Navigation },
+  methods: {
+    getSiteLang (lang) {
+      this.$emit('setSiteLang', lang)
+    }
+  }
 }
 </script>
 
