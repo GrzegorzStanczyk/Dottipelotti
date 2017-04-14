@@ -52,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 .carousel {
   width: 100%;
+  height: 100%;
   position: relative;  
 }
 .carousel__img {  
@@ -65,8 +66,8 @@ export default {
 }
 
 .btn {
-  width: 8%;
-  height: 10%;
+  width: 12%;
+  height: 15%;
   top: 50%;
   position: absolute;  
   border-radius: 50%;
