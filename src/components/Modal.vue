@@ -52,9 +52,6 @@ export default {
       this.closeModal()
     })
   },
-  created () {
-    this.arrowSlide()
-  },
   methods: {
     showSlides (n) {
       if (n > this.imagesLength) { this.curentImage = 0 }
@@ -72,17 +69,16 @@ export default {
         }
       }, false)
     },
-    arrowSlide () {
-      document.addEventListener('keyup', evt => {
-        if (evt.keyCode === 37) {
-          console.log('keypresed')
-          this.plusSlides(-1)
-        } else if (evt.keyCode === 39) {
-          console.log('keypresed')
-          this.plusSlides(1)
-        }
-      }, false)
+    arrowSlide (evt) {
+      if (evt.keyCode === 37) {
+        this.plusSlides(-1)
+      } else if (evt.keyCode === 39) {
+        this.plusSlides(1)
+      }
     }
+  },
+  created () {
+    document.addEventListener('keyup', this.arrowSlide)
   },
   beforeDestroy () {
     document.removeEventListener('keyup', this.arrowSlide)
