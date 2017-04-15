@@ -80,6 +80,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(../static/images/tlo.jpg);
+  overflow: hidden;
 }
 
 #app {
