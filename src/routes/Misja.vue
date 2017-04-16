@@ -1,6 +1,6 @@
 <template>
   <section class="blog-container">
-    <aside class="aside">
+    <aside v-if="!isMobile" class="aside">
       <KontaktIn :siteContent="siteContent"/>
     </aside>
     <article class="blog-container-in">
@@ -31,7 +31,7 @@ export default {
       title: null
     }
   },
-  props: { siteContent: Object },
+  props: { siteContent: Object, isMobile: Boolean },
   computed: {
     pageContent () {
       this.title = this.siteContent.lang === 'pl' ? 'nasza misja' : 'our mision'

@@ -8,19 +8,18 @@
         <Language v-on:setSiteLang="getSiteLang"/>
       </div>
     </header>
-    <Home id="home" :siteContent="siteContent" />
-    <Misja id="misja" :siteContent="siteContent" />
-    <Program id="program" :siteContent="siteContent" />
-    <NaTalerzu id="na-talerzu" :siteContent="siteContent" />
-    <Galeria id="galeria" :siteContent="siteContent" :isMobile="isMobile" />
-    <Kadra id="kadra" :siteContent="siteContent" />
-    <Cennik id="cennik" :siteContent="siteContent" />
-    <Kontakt id="kontakt" :siteContent="siteContent" />
+    <Home id="home" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Misja id="misja" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Program id="program" :siteContent="siteContent" :isMobile="isMobile"/>
+    <NaTalerzu id="na-talerzu" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Galeria id="galeria" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Kadra id="kadra" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Cennik id="cennik" :siteContent="siteContent" :isMobile="isMobile"/>
+    <Kontakt id="kontakt" :siteContent="siteContent" :isMobile="isMobile"/>
   </div>  
 </template>
 
 <script>
-
 import Home from '@/routes/Home'
 import Misja from '@/routes/Misja'
 import Program from '@/routes/Program'
