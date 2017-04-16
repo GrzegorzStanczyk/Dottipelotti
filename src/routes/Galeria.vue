@@ -1,7 +1,7 @@
 <template>
   <section class="blog-container">
     <header class="center">
-      <h2 class="title">{{title}}
+      <h2 class="title">{{galleryTitle}}
         <span class="o1"></span>
         <span class="o2"></span>
         <span class="o3"></span>
@@ -39,8 +39,11 @@ export default {
   },
   computed: {
     pageContent () {
-      this.title = this.siteContent.lang === 'pl' ? 'galeria' : 'gallery'
       return this.siteContent.media.map(media => media.media_details.sizes.thumbnail.source_url)
+    },
+    galleryTitle () {
+      this.title = this.siteContent.lang === 'pl' ? 'galeria' : 'gallery'
+      return this.title
     }
   },
   methods: {
