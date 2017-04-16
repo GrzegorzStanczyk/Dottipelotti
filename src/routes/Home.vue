@@ -72,6 +72,7 @@ export default {
 }
 
 .blog-container-in-article {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 15px;
   margin: 8px;
   padding: 8px;
