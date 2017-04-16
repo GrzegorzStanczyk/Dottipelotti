@@ -13,7 +13,8 @@
       </header>  
       <div class="border">
         <div class="blog-container-in-article">
-          <img src="../../static/images/aktualnosci.jpg" alt="Aktualności">
+          <img v-if="siteContent.lang === 'pl'" src="../../static/images/aktualnosci.jpg" alt="Aktualności">
+          <img v-else src="../../static/images/news.png" alt="News">
           <div v-if="siteContent.lang === 'pl'" tabindex="0" v-html="pageContent.pl" />
           <div v-else tabindex="0" v-html="pageContent.en" />
         </div> 
