@@ -53,15 +53,17 @@ a {
   align-items: center;
 	position: absolute;
   text-decoration: none;
-	background: url(../../static/images/jezyk-bg.png) no-repeat;
-  width: 28px;
-  height: 28px;
+	border-radius: 50%;
+	background-color: #FBFFEF;
+  width: 30px;
+  height: 30px;
   color: #c7c3bc;
 }
 
 .languages-container.pl .pl,
 .languages-container.en .en {
-  color: #726a58;
+	color: #FBFFEF;
+	background-color: #00D1CB;
 }
 
 a:hover {
