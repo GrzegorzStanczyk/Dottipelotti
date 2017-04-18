@@ -12,7 +12,6 @@ import Program from '@/routes/Program'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: Home },
     { path: '/cennik', name: 'Cennik', component: Cennik },
