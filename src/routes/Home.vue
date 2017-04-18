@@ -5,7 +5,7 @@
     </aside>
     <article class="blog-container-in">
       <header class="center">
-        <h2 class="title home">{{title}}
+        <h2 class="title home">{{blogTitle}}
           <span class="o1"></span>
           <span class="o2"></span>
           <span class="o3"></span>
@@ -36,11 +36,14 @@ export default {
   props: { siteContent: Object, isMobile: Boolean },
   computed: {
     pageContent () {
-      this.title = this.siteContent.lang === 'pl' ? 'Witajcie w Dotti Pelotti' : 'Welcome to Dotti Pelotti'
       return {
         pl: this.siteContent.pages.pl.find(page => page.slug === 'home_pl').content.rendered,
         en: this.siteContent.pages.en.find(page => page.slug === 'home_en').content.rendered
       }
+    },
+    blogTitle () {
+      this.title = this.siteContent.lang === 'pl' ? 'Witajcie w Dotti Pelotti' : 'Welcome to Dotti Pelotti'
+      return this.title
     }
   },
   mounted () {

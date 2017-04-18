@@ -42,7 +42,7 @@ export default {
       return this.siteContent.media.map(media => media.media_details.sizes.thumbnail.source_url)
     },
     galleryTitle () {
-      this.title = this.siteContent.lang === 'pl' ? 'galeria' : 'gallery'
+      this.title = this.siteContent.lang === 'pl' ? 'galeria' : 'photo gallery'
       return this.title
     }
   },

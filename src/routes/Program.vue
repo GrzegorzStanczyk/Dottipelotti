@@ -5,7 +5,7 @@
     </aside>
     <article class="blog-container-in">
       <header class="center">
-        <h2 class="title">{{title}}
+        <h2 class="title">{{blogTitle}}
           <span class="o1"></span>
           <span class="o2"></span>
         </h2>
@@ -33,11 +33,14 @@ export default {
   props: { siteContent: Object, isMobile: Boolean },
   computed: {
     pageContent () {
-      this.title = this.siteContent.lang === 'pl' ? 'nasz program' : 'our program'
       return {
         pl: this.siteContent.pages.pl.find(page => page.slug === 'program_pl').content.rendered,
         en: this.siteContent.pages.en.find(page => page.slug === 'program_en').content.rendered
       }
+    },
+    blogTitle () {
+      this.title = this.siteContent.lang === 'pl' ? 'nasz program' : 'our program'
+      return this.title
     }
   },
   mounted () {
