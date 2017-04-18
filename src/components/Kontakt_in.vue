@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss">  
   .aside-contact {
     font-size: 14px;
     position: relative;
@@ -41,6 +41,9 @@ export default {
   a {
     text-decoration: none;
     color: #ff4699;
+    &:last-child {
+      font-weight: bold;
+    }
   }
   .color_1 {
     color: #ff4699;
@@ -53,5 +56,9 @@ export default {
   }
   .color_4 {
     color: #00d1cb;
+  }
+  .facebook {
+    color: #3B5998;
+    font-weight: bold;
   }
 </style>
