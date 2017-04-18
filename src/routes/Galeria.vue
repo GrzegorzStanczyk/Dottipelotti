@@ -56,11 +56,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.blog-container {
-  box-sizing: border-box;
-  padding: 15px 0;
-  max-width: 1024px;
-}
 
 .blog-container {
   display: flex;
@@ -71,7 +66,7 @@ export default {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .gallery-images {
