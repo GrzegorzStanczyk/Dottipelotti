@@ -1,28 +1,23 @@
 <template>
   <div class="carousel">
-    <button class="btn carousel__preview-button"
-            @click="plusSlides(-1)"
-            type="button">
-    </button>
-    <button class="btn carousel__next-button"
-            @click="plusSlides(1)"
-            type="button">
-    </button>
+    <slick ref="slick" :options="slickOptions">
     <img v-for="image in pageContent" 
-      :src="image" alt="" 
-      class="carousel__img"
-      ref="img">
+      :src="image" alt="">
+    </slick>
   </div>
 </template>
 
 <script>
+import Slick from 'vue-slick'
 export default {
   name: 'Carousel',
   props: { siteContent: Object },
+  components: { Slick },
   data () {
     return {
-      slideIndex: 0,
-      imagesLength: this.siteContent.media.length - 1
+      slickOptions: {
+        slidesToShow: 1
+      }
     }
   },
   computed: {
@@ -30,42 +25,29 @@ export default {
       return this.siteContent.media.map(media => media.media_details.sizes.full.source_url)
     }
   },
-  mounted () {
-    this.$nextTick(() => {
-      this.showSlides(this.slideIndex)
-    })
-  },
   methods: {
-    showSlides (n) {
-      if (n > this.imagesLength) { this.slideIndex = 0 }
-      if (n < 0) { this.slideIndex = this.imagesLength }
-      this.$refs.img[this.slideIndex].classList.add('show')
+    next () {
+      this.$refs.slick.next()
     },
-    plusSlides (n) {
-      this.$refs.img[this.slideIndex].classList.remove('show')
-      this.showSlides(this.slideIndex += n)
+    prev () {
+      this.$refs.slick.prev()
+    },
+    reInit () {
+      this.$refs.slick.reSlick()
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.carousel {
+<style lang="scss">
+.slick-slider {
   width: 100%;
   height: 100%;
   position: relative;  
-}
-.carousel__img {  
-  display: none;
-  max-width: 95%;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
-.show {
-  display: block;
-}
-
-.btn {
+.slick-arrow {
   width: 12%;
   height: 15%;
   top: 50%;
@@ -73,24 +55,22 @@ export default {
   border-radius: 50%;
   border: 0;
   cursor: pointer;
-  transition: opacity .6s ease;
+  transition: opacity .6s ease;  
+  color: rgba(0, 0, 0, 0);
   &:focus{
     outline: none;
   }
 }
 
-.btn:hover {
-  opacity: 0.8;
-}
-
-.carousel__preview-button {
+.slick-prev {
+  z-index: 10;
   left: 2%;
   background: url(../../static/images/w-lewo.png) no-repeat center center;
   background-size: 100% 100%;
   transform: translateY(-50%);
 }
 
-.carousel__next-button {
+.slick-next {
   right: 2%;
   background: url(../../static/images/w-prawo.png) no-repeat center center;
   background-size: 100% 100%;
