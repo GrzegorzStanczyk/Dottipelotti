@@ -2,7 +2,7 @@
   <p v-if="!siteContent" class="loading">Loading...</p>
   <mobile v-on:setSiteLang="getSiteLang" v-else-if='isMobile' :siteContent="siteContent" :isMobile="isMobile"/>  
   <div v-else id="app" >
-    <top-container v-on:setSiteLang="getSiteLang"/>
+    <top-container v-on:setSiteLang="getSiteLang" :siteContent="siteContent"/>
     <router-view :siteContent="siteContent" :isMobile="isMobile" />  
     <div class="footer"></div>  
   </div>

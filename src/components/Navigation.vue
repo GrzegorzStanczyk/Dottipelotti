@@ -1,15 +1,34 @@
 <template>  
     <nav role="navigation">
-      <router-link class="window home" to="/" exact><span>dom</span></router-link>
-      <router-link class="window misja" to="/misja"><span>misja</span></router-link>
+      <router-link class="window home" to="/" exact><span>{{navTitle ? 'dom' : 'home'}}</span></router-link>
+      <router-link class="window mision" to="/misja"><span>{{navTitle ? 'misja' : 'mission'}}</span></router-link>
       <router-link class="window program" to="/program"><span>program</span></router-link>
-      <router-link class="window na-talerzu" to="/na-talerzu"><span>na talerzu</span></router-link>
-      <router-link class="window galeria" to="/galeria"><span>galeria</span></router-link>
-      <router-link class="window kadra" to="/kadra"><span>kadra</span></router-link>
-      <router-link class="window cennik" to="/cennik"><span>cennik</span></router-link>
-      <router-link class="contact" to="/kontakt"><span>kontakt</span></router-link>
-    </nav>  
+      <router-link class="window on-the-plate" to="/na-talerzu"><span>{{navTitle ? 'na talerzu' : 'on the plate'}}</span></router-link>
+      <router-link class="window gallery" to="/galeria"><span>{{navTitle ? 'galeria' : 'gallery'}}</span></router-link>
+      <router-link class="window staff" to="/kadra"><span>{{navTitle ? 'kadra' : 'our staff'}}</span></router-link>
+      <router-link class="window prices" to="/cennik"><span>{{navTitle ? 'cennik' : 'prices'}}</span></router-link>
+      <router-link class="contact" to="/kontakt"><span>{{navTitle ? 'kontakt' : 'contact'}}</span></router-link>
+    </nav>    
 </template>
+
+<script>
+export default {
+  name: 'Navigation',
+  props: { siteContent: Object },
+  data () {
+    return {
+      title: null
+    }
+  },
+  computed: {
+    navTitle () {
+      this.title = this.siteContent.lang === 'pl'
+      console.log(this.title)
+      return this.title
+    }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 nav {
@@ -62,30 +81,30 @@ a {
   background: url(../../static/images/home-akt.png) no-repeat center 0;
 }
 
-.cennik {
+.prices {
   background: url(../../static/images/cennik.png) no-repeat center 0;
 }
 
-.cennik.router-link-active,
-.cennik:hover {
+.prices.router-link-active,
+.prices:hover {
   background: url(../../static/images/cennik-akt.png) no-repeat center 0;
 }
 
-.galeria {
+.gallery {
   background: url(../../static/images/galeria.png) no-repeat center 0;
 }
 
-.galeria.router-link-active,
-.galeria:hover {
+.gallery.router-link-active,
+.gallery:hover {
   background: url(../../static/images/galeria-akt.png) no-repeat center 0;
 }
 
-.kadra {
+.staff {
   background: url(../../static/images/kadra.png) no-repeat center 0;
 }
 
-.kadra.router-link-active,
-.kadra:hover {
+.staff.router-link-active,
+.staff:hover {
   background: url(../../static/images/kadra-akt.png) no-repeat center 0;
 }
 
@@ -95,21 +114,21 @@ a {
   color: #ffffff;
 }
 
-.misja {
+.mision {
   background: url(../../static/images/misja.png) no-repeat center 0;
 }
 
-.misja.router-link-active,
-.misja:hover {
+.mision.router-link-active,
+.mision:hover {
   background: url(../../static/images/misja-akt.png) no-repeat center 0;
 }
 
-.na-talerzu {
+.on-the-plate {
   background: url(../../static/images/na-talerzu.png) no-repeat center 0;
 }
 
-.na-talerzu.router-link-active,
-.na-talerzu:hover {
+.on-the-plate.router-link-active,
+.on-the-plate:hover {
   background: url(../../static/images/na-talerzu-akt.png) no-repeat center 0;
 }
 

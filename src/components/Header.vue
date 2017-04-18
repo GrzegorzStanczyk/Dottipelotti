@@ -5,7 +5,7 @@
       <div class="logo" />
       <Language v-on:setSiteLang="getSiteLang"/>
     </div>
-    <Navigation />
+    <Navigation :siteContent="siteContent"/>
   </header>
 </template>
 
@@ -16,6 +16,7 @@ import Navigation from '@/components/Navigation'
 export default {
   name: 'Header',
   components: { Language, Navigation },
+  props: { siteContent: Object },
   methods: {
     getSiteLang (lang) {
       this.$emit('setSiteLang', lang)
