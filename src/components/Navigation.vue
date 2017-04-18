@@ -23,7 +23,6 @@ export default {
   computed: {
     navTitle () {
       this.title = this.siteContent.lang === 'pl'
-      console.log(this.title)
       return this.title
     }
   }
