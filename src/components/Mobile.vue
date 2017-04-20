@@ -1,6 +1,5 @@
 <template>  
   <div id="mobileApp">
-    <Hamburger :siteContent="siteContent"/>
     <header>
       <h1 class="focusable">Witajcie w Dotti Pelotti</h1>
       <div class="top-container"> 
@@ -8,6 +7,7 @@
         <Language v-on:setSiteLang="getSiteLang"/>
       </div>
     </header>
+    <Hamburger :siteContent="siteContent"/>
     <Home id="home" :siteContent="siteContent" :isMobile="isMobile"/>
     <Misja id="misja" :siteContent="siteContent" :isMobile="isMobile"/>
     <Program id="program" :siteContent="siteContent" :isMobile="isMobile"/>

@@ -1,30 +1,31 @@
 <template> 
-	<div class="mobile-navigation">
-		<div class="mask"
+  <div class="mobile-navigation">
+    <div class="mask"
           v-bind:class="{ shadow: seen }"
           v-on:click="seen = !seen"/>
-		<button class="nav-toggler"
+    <button class="nav-toggler"
           v-on:click="seen = !seen"
-					type="button"
-					aria-label="toggle navigation" 
-					aria-controls="navigation" 
-					aria-expand="false">
-			<span class="nav-toggler__icon" aria-hidden="true"></span>
+          type="button"
+          aria-label="toggle navigation" 
+          aria-controls="navigation" 
+          aria-expand="false"
+          role="button">
       <span class="nav-toggler__icon" aria-hidden="true"></span>
-			<span class="nav-toggler__label">Open/close menu</span>  
-		</button>
-		<nav class="nav-bar"
+      <span class="nav-toggler__icon" aria-hidden="true"></span>
+      <span class="nav-toggler__label">Open/close menu</span>
+    </button>
+    <nav class="nav-bar"
             v-bind:class="{ nav__open: seen }"
-						role="navigation" 
-						aria-label="Main Menu">
+            role="navigation" 
+            aria-label="Main Menu">
         <ul class="nav-links" v-if="siteContent.lang === 'pl'">
           <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.name }}</a></li>       
         </ul>
         <ul class="nav-links" v-else>
           <li v-for="anchor in anchors"><a v-on:click="seen = !seen" :href="`#${anchor.link}`">{{ anchor.nameEN }}</a></li>       
         </ul>
-		</nav>
-	</div>	
+    </nav>
+  </div>	
 </template>
 
 <script>
@@ -50,6 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 .mask {  
   position: fixed;
