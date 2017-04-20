@@ -2,7 +2,7 @@
   <header>
     <h1 class="focusable">Witajcie w Dotti Pelotti</h1>
     <div class="top-container"> 
-      <div class="logo" />
+      <router-link class="logo" to="/" exact></router-link>
       <Language v-on:setSiteLang="getSiteLang"/>
     </div>
     <Navigation :siteContent="siteContent"/>
@@ -66,6 +66,7 @@ h1.focusable:focus {
 }
 
 .logo {
+  display: block;
   background: url(../../static/images/logo.png) no-repeat;
   margin-top: 30px;
   margin-left: 30px;
