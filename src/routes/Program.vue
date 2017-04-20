@@ -42,9 +42,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'nasz program' : 'our program'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Program siteContent', this.siteContent)
   }
 }
 </script>

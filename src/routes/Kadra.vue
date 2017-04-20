@@ -43,9 +43,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'kadra' : 'our staff'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Kadra siteContent', this.siteContent)
   }
 }
 </script>

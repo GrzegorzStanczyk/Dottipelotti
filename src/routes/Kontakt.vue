@@ -43,9 +43,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'kontakt' : 'contact'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Kontakt siteContent', this.siteContent)
   }
 }
 </script>

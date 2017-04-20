@@ -45,9 +45,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'Witajcie w Dotti Pelotti' : 'Welcome to Dotti Pelotti'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Home siteContent', this.siteContent)
   }
 }
 </script>

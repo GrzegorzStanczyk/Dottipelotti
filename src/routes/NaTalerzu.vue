@@ -42,9 +42,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'na talerzu' : 'on the plate'
       return this.title
     }
-  },
-  mounted () {
-    console.log('NaTalerzu siteContent', this.siteContent)
   }
 }
 </script>

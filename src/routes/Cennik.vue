@@ -43,9 +43,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'cennik' : 'prices'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Cennik siteContent', this.siteContent)
   }
 }
 </script>

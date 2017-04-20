@@ -14,9 +14,6 @@ export default {
         en: this.siteContent.pages.en.find(page => page.slug === 'kontakt_in_en').content.rendered
       }
     }
-  },
-  mounted () {
-    console.log('Kontakt_in siteContent', this.siteContent)
   }
 }
 </script>

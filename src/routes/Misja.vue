@@ -43,9 +43,6 @@ export default {
       this.title = this.siteContent.lang === 'pl' ? 'nasza misja' : 'our mission'
       return this.title
     }
-  },
-  mounted () {
-    console.log('Misja siteContent', this.siteContent)
   }
 }
 </script>
