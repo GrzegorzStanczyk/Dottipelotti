@@ -14,9 +14,6 @@ export default {
         en: this.siteContent.pages.en.find(page => page.slug === 'zapisy_en').content.rendered
       }
     }
-  },
-  mounted () {
-    console.log('Zapisy siteContent', this.siteContent)
   }
 }
 </script>
