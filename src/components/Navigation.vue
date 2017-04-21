@@ -94,7 +94,7 @@ nav {
   top: 3px;
   height: 74px;
   width: 76px;
-  perspective: 250px;
+  perspective: 500px;
   // width: 104px;
   // height: 108px;
   // transition: background .2s ease-in; 
@@ -102,21 +102,22 @@ nav {
   &:hover {
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
   }
-  &:hover .door--right {        
-    transform: rotateY(130deg);
-    box-shadow: -15px 5px 30px 5px rgba(0,0,0,0.3);
-  }
-  &:hover .door--left{
-    transform: rotateY(-130deg);
-    box-shadow: 15px 5px 30px 5px rgba(0,0,0,0.3);
-  }
+
 }
 
 a {  
   color: inherit;
   text-decoration: none;
   &:hover {
-    color: #000000;    
+    color: #000000;
+    & .door--right {        
+      transform: rotateY(130deg);
+      box-shadow: -15px 5px 30px 5px rgba(0,0,0,0.3);
+    }
+    & .door--left{
+      transform: rotateY(-130deg);
+      box-shadow: 15px 5px 30px 5px rgba(0,0,0,0.3);
+    } 
   }
   & span {
     display: block;

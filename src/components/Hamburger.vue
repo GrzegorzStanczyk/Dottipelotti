@@ -51,8 +51,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .mask {  
   position: fixed;
   top: 0;
