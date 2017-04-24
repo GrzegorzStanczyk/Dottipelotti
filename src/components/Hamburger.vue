@@ -80,8 +80,6 @@ export default {
   margin: 0;
   box-sizing: content-box;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   position: fixed;
   z-index: 5;
   top: -2%;
@@ -132,16 +130,20 @@ export default {
   }    
 }
 
-.nav-toggler__icon:first-child {    
-  display: block;
+.nav-toggler__icon:first-child {   
+  top: 20%;
+  right: 20%; 
+  position: absolute;
   margin-top: 20px;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: #00D1CB;
 }
-.nav-toggler__icon:nth-child(2) {  
-  display: block;
+.nav-toggler__icon:nth-child(2) {
+  top: 50%;
+  left: 20%;
+  position: absolute;
   width: 15px;
   height: 15px;
   border-radius: 50%;
