@@ -62,12 +62,10 @@ export default {
       this.$refs.img[this.curentImage].classList.remove('show')
       this.showSlides(this.curentImage += n)
     },
-    closeModal () {
-      document.addEventListener('keyup', evt => {
-        if (evt.keyCode === 27) {
-          this.$emit('close')
-        }
-      }, false)
+    closeModal (evt) {
+      if (evt && evt.keyCode === 27) {
+        this.$emit('close')
+      }
     },
     arrowSlide (evt) {
       if (evt.keyCode === 37) {
@@ -79,9 +77,11 @@ export default {
   },
   created () {
     document.addEventListener('keyup', this.arrowSlide)
+    document.addEventListener('keyup', this.closeModal)
   },
   beforeDestroy () {
     document.removeEventListener('keyup', this.arrowSlide)
+    document.removeEventListener('keyup', this.closeModal)
   }
 }
 </script>
@@ -212,7 +212,6 @@ export default {
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
