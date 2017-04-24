@@ -105,6 +105,9 @@ h2 {
 }
 
 @media screen and (min-width: 1024px) {
+  html {
+    overflow-y: scroll;
+  }
   body {
     display: flex;
     justify-content: center;
