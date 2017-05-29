@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     pageContent () {
-      return this.siteContent.media.map(media => media.media_details.sizes.full.source_url)
+      return this.siteContent.media.map(media => media.media_details.sizes.large.source_url)
     }
   },
   methods: {

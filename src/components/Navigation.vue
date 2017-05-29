@@ -80,6 +80,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: space-around;
+  background-color: #fcfff0;
   background: url(../../static/images/menu3.png) no-repeat center bottom;
   font-family: "typoupright", cursive;
   font-size: 24px;
@@ -102,7 +103,6 @@ nav {
   &:hover {
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
   }
-
 }
 
 a {  
@@ -245,6 +245,7 @@ a:nth-child(7) .door--left::before {
 .contact.router-link-active,
 .contact:hover {
   background: url(../../static/images/kontakt-akt.png) no-repeat center 0;
+  transition: background .5s, color .5s;
   color: #ffffff;
 }
 
