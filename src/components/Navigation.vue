@@ -245,7 +245,6 @@ a:nth-child(7) .door--left::before {
 .contact.router-link-active,
 .contact:hover {
   background: url(../../static/images/kontakt-akt.png) no-repeat center 0;
-  transition: background .5s, color .5s;
   color: #ffffff;
 }
 
@@ -260,6 +259,7 @@ a:nth-child(7) .door--left::before {
   color: #726a58;  
   font-family: "typoupright", cursive;
   font-size: 22px;
+  transition: background .5s, color .5s;
 }
 
 .contact > span {
